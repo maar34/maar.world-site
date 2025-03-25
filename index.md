@@ -22,11 +22,21 @@ article_header:
 <div class="p-5"></div>
 
 
-<div class="hero hero--center hero--bordered hero-example--linear-gradient">
+<div 
+  class="hero hero--center hero--bordered hero-example--linear-gradient" 
+  onclick="window.location='https://plantasia.space'" 
+  style="cursor: pointer;"
+>
   <div class="hero__content">
     <h3></h3>
-    <p class="white">maar world 2.0 coming soon. <br> <br> 
-     🌬🌎 home for 𝕣ꫀᧁꫀꪀꫀ𝕣ꪖ𝕥ⅈꪜꫀ ꪑꪊડⅈᥴ ❤️‍🔥🐬
+    <img 
+      src="img/landing/plantasia-logo-transparent-background.png" 
+      alt="Plantasia Logo" 
+      style="max-width: 300px; height: auto; margin-bottom: 1rem;"
+    >
+    <p class="white">
+      plantasia.space coming soon. <br><br>
+      home for 𝕣ꫀᧁꫀꪀꫀ𝕣ꪖ𝕥ⅈꪜꫀ ꪑꪊડⅈᥴ 
     </p>
   </div>
 </div>
