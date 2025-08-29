@@ -11,8 +11,8 @@ lang: en
 
 A performance connecting human gestures, orbital data, and real-time audiovisual systems.
 
-**𝐵𝓇𝓊𝓃𝒶 𝒢𝓊𝒶𝓇𝓃𝒾𝑒𝓇𝒾 𝒞𝑜𝓁𝒶𝓈𝓈𝑜** ([bruna@maar.world](mailto:bruna@maar.world)) – Maar World, Berlin  
-**Gabriel Vigliensoni** ([gabriel.vigliensoni@concordia.ca](mailto:gabriel.vigliensoni@concordia.ca)) – Concordia University, Montréal, QC
+**𝐵𝓇𝓊𝓃𝒶 𝒢𝓊𝒶𝓇𝓃𝒾𝑒𝓇𝒾 𝒞𝑜𝓁𝒶𝓈𝓈𝑜** – Maar World, Berlin  
+**Gabriel Vigliensoni** – [vigliensoni.com](https://vigliensoni.com/) – Concordia University, Montréal, QC
 
 ## Introduction
 
