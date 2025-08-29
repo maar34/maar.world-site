@@ -11,7 +11,7 @@ lang: en
 
 A performance connecting human gestures, orbital data, and real-time audiovisual systems.
 
-**𝐵𝓇𝓊𝓃𝒶 𝒢𝓊𝒶𝓇𝓃𝒾𝑒𝓇𝒾 𝒞𝑜𝓁𝒶𝓈𝓈𝑜** – Maar World, Berlin  
+**𝐵𝓇𝓊𝓃𝒶 𝒢𝓊𝒶𝓇𝓃𝒾𝑒𝓇𝒾 𝒞𝓇𝑜𝓈𝓈𝑜** – Maar World, Berlin  
 **Gabriel Vigliensoni** – [vigliensoni.com](https://vigliensoni.com/) – Concordia University, Montréal, QC
 
 ## Introduction
@@ -20,7 +20,7 @@ Orbits and Bodies explores the entanglement of embodied gesture, astronomical da
 
 ---
 
-<object data="/img/lab/WAC25-Orbits-and-Bodies-Bruna-Gabriel.pdf" type="application/pdf" width="100%" height="100%">
+<object data="/img/lab/WAC25-Orbits-and-Bodies-Bruna-Gabriel.pdf" type="application/pdf" width="100%" height="840px">
   <p>Your browser does not support PDFs. <a href="/img/lab/WAC25-Orbits-and-Bodies-Bruna-Gabriel.pdf">Download the PDF</a>.</p>
 </object>
 
