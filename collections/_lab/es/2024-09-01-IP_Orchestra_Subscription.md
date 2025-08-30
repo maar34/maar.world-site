@@ -1,5 +1,5 @@
 ---
-title: "Subscripción Interplanetary Players Orchestra (ES)"
+title: "Subscripción Orbiters Orchestra (ES)"
 layout: article
 show_title: false
 permalink: /lab/es/ip-orchestra-subscription

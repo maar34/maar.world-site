@@ -66,7 +66,7 @@ key: Radio
 <div class="hero hero--center hero--dark"  style= 'height: 512px; background-image: url("img/radio/cards-back-collect.png");'>
     <div class="hero__content">
         <h1><a href="https://maarworld.gumroad.com" target="_blank">Collect</a></h1>
-        <p><a href="https://maarworld.gumroad.com" target="_blank">ENT Cards for Interplanetary Players.</a></p>
+        <p><a href="https://maarworld.gumroad.com" target="_blank">ENT Cards for Orbiters.</a></p>
     </div>
 </div>
 

@@ -1,6 +1,6 @@
 ---
 layout: landing
-title: Interplanetary Players 
+title: Orbiters 
 cover: /img/docs/covers/int-players-cover.jpeg
 excerpt: >
       Imagine turning your browser into a turntable from outer space. 

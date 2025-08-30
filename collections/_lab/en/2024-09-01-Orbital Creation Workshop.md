@@ -13,7 +13,7 @@ lang: en
 
 
 ### What?
-The "Interplanetary Players Orchestra" is a musical co-creation workshop, a creative and transdisciplinary space. During the workshop, participants work together to co-create a meaningful experience using meta-musical instruments and the design of their imagination. A meaningful experience goes beyond the immediate or the technical; it is a profound experience that creates emotional or intellectual connections among participants. The interplanetary players combine features of traditional and contemporary instruments in a digital interface accessible from multiple devices. The experience culminates in an exhibition showcasing the results of this collaborative process.
+The "Orbiters Orchestra" is a musical co-creation workshop, a creative and transdisciplinary space. During the workshop, participants work together to co-create a meaningful experience using meta-musical instruments and the design of their imagination. A meaningful experience goes beyond the immediate or the technical; it is a profound experience that creates emotional or intellectual connections among participants. The Orbiters combine features of traditional and contemporary instruments in a digital interface accessible from multiple devices. The experience culminates in an exhibition showcasing the results of this collaborative process.
 
 ### Why?
 The workshop arises from the need to explore different forms of interaction and co-creation. By inviting people from various fields to participate, it seeks to create a space where individual ideas and creations intertwine to generate collective composition. The central idea is that human relationships are not only vertical or horizontal but orbital, and this approach can foster new forms of expression and collective understanding through music and sound.
@@ -25,7 +25,7 @@ To promote the creation of an inclusive and experimental sound ensemble, where n
 Summary of the presentation of the first orbital creation workshop, University of the Arts Guayaquil, September 2024.
 
 
-### What are the Interplanetary Players?
+### What are the Orbiters?
 ##### Imagine turning your browser into a turntable from outer space.
 
 <!-- New section for "Control the Sound:" -->

@@ -1,5 +1,5 @@
 ---
-title: "Orbital Creation Workshop: Interplanetary Players Orchestra (EN)"
+title: "Orbital Creation Workshop: Orbiters Orchestra (EN)"
 layout: article
 permalink: /lab/en/ip-orchestra
 cover: https://dl.dropboxusercontent.com/s/9vdaaxsmuzklbp3/1-ent-player-yellow.jpg?raw=1
@@ -10,12 +10,12 @@ lang: en
 ### 🐚 Perhaps the relationship between human beings is neither vertical nor horizontal, but orbital. 🧬
 
 ### Invitation
-From the  <a href="https://www.uartes.edu.ec/sitio/">Universidad de las Artes in Guayaquil</a>, we are excited to present the <a href="/lab/en/ip-orchestra-design">Interplanetary Players Orchestra</a>, a workshop offering unique sensory experiences for musical co-creation. This event is designed to integrate disciplines such as sound arts, music, music production, theater, dance, cinema, literature, intercultural pedagogy, visual arts, and programming into a single vibrant, creative, and transdisciplinary space.
+From the  <a href="https://www.uartes.edu.ec/sitio/">Universidad de las Artes in Guayaquil</a>, we are excited to present the <a href="/lab/en/ip-orchestra-design">Orbiters Orchestra</a>, a workshop offering unique sensory experiences for musical co-creation. This event is designed to integrate disciplines such as sound arts, music, music production, theater, dance, cinema, literature, intercultural pedagogy, visual arts, and programming into a single vibrant, creative, and transdisciplinary space.
 We ask ourselves: What ideas can unite the people present in the concert hall, in the city, in the country, on the continent, and on Earth? Our workshop explores these connections through the use of meta-instruments that combine features of various traditional and contemporary instruments into a single and simple interface. This allows participants to play different types of sounds from multiple networked devices, integrating bodies with technologies and new means of interaction.
 
 ### Workshop Description
 In our creation lab, we will implement a research process designed to form an ensemble where no prior musical experience is required to participate. We invite you to explore with us the infinite possibilities of music and sound in a collaborative and experimental environment.
-<a href="/lab/en/ip-orchestra-design">Interplanetary Players Orchestra</a> proposes the co-creation of an integral art experience, where we aim to generate a meaningful experience by integrating artists and the audience, along with artistic and scientific media. We transform computers and mobiles into meta-musical-instruments that combine multiple functionalities, synchronizing creations with both human movement and the movements of planets in the Kepler-47 star system, to co-create otherworldy soundscapes with a touch of stardust.
+<a href="/lab/en/ip-orchestra-design">Orbiters Orchestra</a> proposes the co-creation of an integral art experience, where we aim to generate a meaningful experience by integrating artists and the audience, along with artistic and scientific media. We transform computers and mobiles into meta-musical-instruments that combine multiple functionalities, synchronizing creations with both human movement and the movements of planets in the Kepler-47 star system, to co-create otherworldy soundscapes with a touch of stardust.
 
 <!-- Disabled Subscribe Button (keeps appearance, disables click) -->
 <div class="contact-form">
@@ -72,7 +72,7 @@ In our creation lab, we will implement a research process designed to form an en
       <img class="lightbox-ignore" src="/img/interplanetary-players/08_ip-max-24.jpg" style="max-width: 800px;"/>
       <div class="text-content">
         <h2>III</h2>
-        <p>We are at the beginning of this journey. Sign up for the workshop to help create the first Interplanetary Players Orchestra.</p>
+        <p>We are at the beginning of this journey. Sign up for the workshop to help create the first Orbiters Orchestra.</p>
       </div>
     </div>
   </div>

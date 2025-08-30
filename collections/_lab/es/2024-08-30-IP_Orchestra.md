@@ -1,5 +1,5 @@
 ---
-title: "Taller de creación orbital: Interplanetary Players Orchestra (ES)"
+title: "Taller de creación orbital: Orbiters Orchestra (ES)"
 layout: article
 permalink: /lab/es/ip-orchestra
 cover: https://dl.dropboxusercontent.com/s/9vdaaxsmuzklbp3/1-ent-player-yellow.jpg?raw=1
@@ -10,12 +10,12 @@ lang: es
 ### 🐚 Tal vez la relación entre seres humanos no sea vertical u horizontal, sea orbital. 🧬
 
 ### Invitación
-Desde la Universidad de las Artes en Guayaquil, estamos emocionados de presentar el <a href="/lab/es/ip-orchestra-design">Interplanetary Players Orchestra</a>, un taller que propone experiencias sensoriales únicas para la co-creación musical. Este evento está diseñado para fusionar disciplinas como las artes sonoras, la música, la producción musical, el teatro, la danza, el cine, la literatura, la pedagogía intercultural, las artes visuales y la programación, en un único y vibrante espacio creativo y transdisciplinario.
+Desde la Universidad de las Artes en Guayaquil, estamos emocionados de presentar el <a href="/lab/es/ip-orchestra-design">Orbiters Orchestra</a>, un taller que propone experiencias sensoriales únicas para la co-creación musical. Este evento está diseñado para fusionar disciplinas como las artes sonoras, la música, la producción musical, el teatro, la danza, el cine, la literatura, la pedagogía intercultural, las artes visuales y la programación, en un único y vibrante espacio creativo y transdisciplinario.
 Nos preguntamos: ¿Qué ideas pueden unir a las personas presentes en la sala de conciertos, en la ciudad, en el país, en el continente y en la Tierra? Nuestro taller explora estas conexiones a través del uso de meta-instrumentos musicales, que combinan características de varios instrumentos tradicionales y contemporáneos, en una sola interfaz. Esto permite a los participantes tocar distintos tipos de sonidos desde múltiples dispositivos en red, integrando los cuerpos con tecnologías y nuevos medios de interacción. 
 
 ### Descripción del Taller
 En nuestro laboratorio de creación implementaremos un proceso de investigación, diseñado para formar un ensamble donde no se requiere experiencia musical previa para participar. Invitamos a explorar con nosotros las infinitas posibilidades de la música y el sonido en un ambiente colaborativo y experimental.
-<a href="/lab/es/ip-orchestra-design">Interplanetary Players Orchestra</a> propone la co-creación de una experiencia de arte integral, donde buscamos generar una experiencia significativa al integrar a artistas y al público presente, junto con medios artísticos y científicos. Transformamos ordenadores y móviles en meta-instrumentos musicales que combinan múltiples funcionalidades, sincronizando las creaciones tanto con el movimiento humano como con el de los planetas del sistema estelar Kepler-47, para co-crear paisajes sonoros con un toque de polvo de estrellas.
+<a href="/lab/es/ip-orchestra-design">Orbiters Orchestra</a> propone la co-creación de una experiencia de arte integral, donde buscamos generar una experiencia significativa al integrar a artistas y al público presente, junto con medios artísticos y científicos. Transformamos ordenadores y móviles en meta-instrumentos musicales que combinan múltiples funcionalidades, sincronizando las creaciones tanto con el movimiento humano como con el de los planetas del sistema estelar Kepler-47, para co-crear paisajes sonoros con un toque de polvo de estrellas.
 
 <div class="contact-form">
     <form action="#" method="post" onsubmit="location.href='/lab/es/ip-orchestra-subscription'; return false;">
@@ -71,7 +71,7 @@ En nuestro laboratorio de creación implementaremos un proceso de investigación
       <img class="lightbox-ignore" src="https://collect.maar.world/img/docs/int-players/08_ip-max-24.jpg" style="max-width: 800px;"/>
       <div class="text-content">
         <h2>III</h2>
-        <p>Estamos en el inicio de este viaje, incribete al Taller para la creación de la primera Interplanetary Players Orchestra.</p>
+        <p>Estamos en el inicio de este viaje, incribete al Taller para la creación de la primera Orbiters Orchestra.</p>
       </div>
     </div>
   </div>

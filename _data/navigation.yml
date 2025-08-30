@@ -2,7 +2,7 @@ header:
 
   - titles:
       # @start locale config
-      en      : &EN       <span class="material-symbols-outlined">digital_wellbeing</span> Interplanetary Players
+      en      : &EN       <span class="material-symbols-outlined">satellite_alt</span> Orbiters
       en-GB   : *EN
       en-US   : *EN
       en-CA   : *EN

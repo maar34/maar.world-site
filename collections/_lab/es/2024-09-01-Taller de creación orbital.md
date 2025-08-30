@@ -13,7 +13,7 @@ lang: es
 
 
 ### ¿Qué?
-El "Interplanetary Players Orchestra" es un taller de co-creación musical, un espacio creativo y transdisciplinario. Durante el taller, los participantes trabajan juntos para co-crear una experiencia significativa utilizando meta-instrumentos musicales y el diseño de su imaginación. Una experiencia significativa es aquella que va más allá de lo inmediato o lo técnico; es una vivencia que deja una huella profunda, generando conexiones emocionales o intelectuales entre los participantes. Los interplanetary players combinan características de instrumentos tradicionales y contemporáneos en una interfaz digital accesible desde múltiples dispositivos. La experiencia culmina con una exposición que mostrará el resultado de este proceso colaborativo.
+El "Orbiters Orchestra" es un taller de co-creación musical, un espacio creativo y transdisciplinario. Durante el taller, los participantes trabajan juntos para co-crear una experiencia significativa utilizando meta-instrumentos musicales y el diseño de su imaginación. Una experiencia significativa es aquella que va más allá de lo inmediato o lo técnico; es una vivencia que deja una huella profunda, generando conexiones emocionales o intelectuales entre los participantes. Los Orbiters combinan características de instrumentos tradicionales y contemporáneos en una interfaz digital accesible desde múltiples dispositivos. La experiencia culmina con una exposición que mostrará el resultado de este proceso colaborativo.
 
 
 ###  ¿Por qué?
