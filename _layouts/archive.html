@@ -31,7 +31,20 @@ titles:
   </div>
 </div>
 
+<div id="archive-results" class="archive-results">
+  {% assign items = site[page.data_source] | default: site.lab %}
+  {% include article-list.html articles=items %}
+</div>
 <script>
-  {%- include scripts/archieve.js -%}
+(function(){
+  // Simple client-side tag filter (no jQuery)
+  const params = new URLSearchParams(window.location.search);
+  const tag = params.get('tag');
+  if(!tag) return;
+  document.querySelectorAll('#archive-results [data-tags]').forEach(el=>{
+    const tags = el.getAttribute('data-tags').split(' ');
+    if(!tags.includes(tag)) el.style.display='none';
+  });
+})();
 </script>
 

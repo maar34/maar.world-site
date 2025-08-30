@@ -7,8 +7,6 @@ tags: EW IP EN performance audiovisual exoplanets
 lang: en
 ---
 
-# Orbits and Bodies
-
 A performance connecting human gestures, orbital data, and real-time audiovisual systems.
 
 **𝐵𝓇𝓊𝓃𝒶 𝒢𝓊𝒶𝓇𝓃𝒾𝑒𝓇𝒾 𝒞𝓇𝑜𝓈𝓈𝑜** – Maar World, Berlin  
@@ -20,7 +18,7 @@ Orbits and Bodies explores the entanglement of embodied gesture, astronomical da
 
 ---
 
-<object data="/img/pdf/WAC25-Orbits-and-Bodies-Bruna-Gabriel.pdf" type="application/pdf" width="100%" height="840px">
+<object data="/img/pdf/WAC25-Orbits-and-Bodies-Bruna-Gabriel.pdf" type="application/pdf" width="100%" height="1400px">
   <p>Your browser does not support PDFs. <a href="/img/pdf/WAC25-Orbits-and-Bodies-Bruna-Gabriel.pdf">Download the PDF</a>.</p>
 </object>
 

@@ -23,12 +23,12 @@ article_header:
 
 <a href="/img/pdf/02_Bruna-Resume.pdf" rel="resume" target="_blank">DOWNLOAD RESUME </a> <br>
 
-<object data="/img/pdf/02_Bruna-Resume.pdf" type="application/pdf" width="100%" height="1024px">
+<object data="/img/pdf/02_Bruna-Resume.pdf#toolbar=0&zoom=100" type="application/pdf" width="100%" height="1024px">
   <p>Your browser does not support PDFs. <a href="/img/pdf/02_Bruna-Resume.pdf">Download the Resume PDF</a>.</p>
 </object>
 
 <a href="/img/pdf/03_Bruna-Portfolio.pdf" rel="portfolio" target="_blank">DOWNLOAD PORTFOLIO </a> <br>
 
-<object data="/img/pdf/03_Bruna-Portfolio.pdf" type="application/pdf" width="100%" height="640px">
+<object data="/img/pdf/03_Bruna-Portfolio.pdf#toolbar=0&zoom=100" type="application/pdf" width="100%" height="1200px">
   <p>Your browser does not support PDFs. <a href="/img/pdf/03_Bruna-Portfolio.pdf">Download the Portfolio PDF</a>.</p>
 </object>

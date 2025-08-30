@@ -17,9 +17,10 @@ We ask ourselves: What ideas can unite the people present in the concert hall, i
 In our creation lab, we will implement a research process designed to form an ensemble where no prior musical experience is required to participate. We invite you to explore with us the infinite possibilities of music and sound in a collaborative and experimental environment.
 <a href="/lab/en/ip-orchestra-design">Interplanetary Players Orchestra</a> proposes the co-creation of an integral art experience, where we aim to generate a meaningful experience by integrating artists and the audience, along with artistic and scientific media. We transform computers and mobiles into meta-musical-instruments that combine multiple functionalities, synchronizing creations with both human movement and the movements of planets in the Kepler-47 star system, to co-create otherworldy soundscapes with a touch of stardust.
 
+<!-- Disabled Subscribe Button (keeps appearance, disables click) -->
 <div class="contact-form">
-    <form action="#" method="post" onsubmit="location.href='/lab/es/ip-orchestra-subscription'; return false;">
-        <button type="submit">Subscribe</button>
+    <form action="#" method="post">
+        <button type="submit" disabled style="opacity:0.6; cursor:not-allowed;">Subscribe</button>
     </form>
 </div>
 
@@ -52,7 +53,7 @@ In our creation lab, we will implement a research process designed to form an en
   <div class="swiper__wrapper">
     <!-- Slide 1 -->
     <div class="swiper__slide">
-      <img class="lightbox-ignore" src="https://collect.maar.world/img/docs/int-players/07_ip-card.jpg" style="max-width: 800px;"/>
+      <img class="lightbox-ignore" src="/img/interplanetary-players/07_ip-card.jpg" style="max-width: 800px;"/>
       <div class="text-content">
         <h2>I</h2>
         <p>Explore music by layering sounds with controls that vary depending on the cards you play, creating rich and original sonic experiences.</p>
@@ -60,7 +61,7 @@ In our creation lab, we will implement a research process designed to form an en
     </div>
     <!-- Slide 2 -->
     <div class="swiper__slide">
-      <img class="lightbox-ignore" src="https://collect.maar.world/img/docs/int-players/10_ip-transit.png" style="max-width: 800px;"/>
+      <img class="lightbox-ignore" src="/img/interplanetary-players/10_ip-transit.png" style="max-width: 800px;"/>
       <div class="text-content">
         <h2>II</h2>
         <p>Recreate music intuitively, making sound creation accessible and fun for everyone, from professional musicians to those with no prior experience.</p>
@@ -68,7 +69,7 @@ In our creation lab, we will implement a research process designed to form an en
     </div>
     <!-- Slide 3 -->
     <div class="swiper__slide">
-      <img class="lightbox-ignore" src="https://collect.maar.world/img/docs/int-players/08_ip-max-24.jpg" style="max-width: 800px;"/>
+      <img class="lightbox-ignore" src="/img/interplanetary-players/08_ip-max-24.jpg" style="max-width: 800px;"/>
       <div class="text-content">
         <h2>III</h2>
         <p>We are at the beginning of this journey. Sign up for the workshop to help create the first Interplanetary Players Orchestra.</p>
@@ -88,9 +89,10 @@ September 13, 2024: Workshop Day 3. 10:00am - 11:00am + Setup <br>
 
 All events will be held at the Universidad de las Artes, Guayaquil.
 
+<!-- Disabled Subscribe Button (second instance) -->
 <div class="contact-form">
-    <form action="#" method="post" onsubmit="location.href='/lab/es/ip-orchestra-subscription'; return false;">
-        <button type="submit">Subscribe</button>
+    <form action="#" method="post">
+        <button type="submit" disabled style="opacity:0.6; cursor:not-allowed;">Subscribe</button>
     </form>
 </div>
 
@@ -111,32 +113,37 @@ We would like to invite students and professionals from various disciplines to j
 </script>
 
 <style>
-  .swiper-demo--3 {
-    background-color: rgb(0, 0, 255); /* Background color set to blue */
+  .swiper-demo--4 {
+    background-color: rgb(0, 0, 255);
+  }
+  .swiper-demo--4 .swiper__slide img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
   }
 </style>
 
-<div class="swiper my-3 swiper-demo swiper-demo--image swiper-demo--3">
+<div class="swiper my-3 swiper-demo swiper-demo--image swiper-demo--4">
   <div class="swiper__wrapper">
     <!-- Slide 1 -->
     <div class="swiper__slide">
-      <img class="lightbox-ignore" src="https://collect.maar.world/img/landing/2024_ss-12.jpeg" alt="Slide 1"/>
+      <img class="lightbox-ignore" src="/img/collect-landing/2024_ss-12.jpeg" alt="Slide 1"/>
     </div>
     <!-- Slide 2 -->
     <div class="swiper__slide">
-      <img class="lightbox-ignore" src="https://collect.maar.world/img/landing/2024_ss-10.jpeg" alt="Slide 2"/>
+      <img class="lightbox-ignore" src="/img/collect-landing/2024_ss-10.jpeg" alt="Slide 2"/>
     </div>
     <!-- Slide 3 -->
     <div class="swiper__slide">
-      <img class="lightbox-ignore" src="https://collect.maar.world/img/landing/2024_ss-8.jpeg" alt="Slide 3"/>
+      <img class="lightbox-ignore" src="/img/collect-landing/2024_ss-8.jpeg" alt="Slide 3"/>
     </div>
     <!-- Slide 4 -->
     <div class="swiper__slide">
-      <img class="lightbox-ignore" src="https://collect.maar.world/img/landing/2024_ss-11.jpeg" alt="Slide 4"/>
+      <img class="lightbox-ignore" src="/img/collect-landing/2024_ss-11.jpeg" alt="Slide 4"/>
     </div>
     <!-- Slide 5 -->
     <div class="swiper__slide">
-      <img class="lightbox-ignore" src="https://collect.maar.world/img/landing/2024_ss-2.jpeg" alt="Slide 5"/>
+      <img class="lightbox-ignore" src="/img/collect-landing/2024_ss-2.jpeg" alt="Slide 5"/>
     </div>
   </div>
   <div class="swiper__button swiper__button--prev fas fa-chevron-left"></div>
@@ -171,9 +178,10 @@ We would like to invite students and professionals from various disciplines to j
 
 <div class="p-5"></div>
 
+<!-- Disabled Subscribe Button (keeps appearance, disables click) -->
 <div class="contact-form">
-    <form action="#" method="post" onsubmit="location.href='/lab/es/ip-orchestra-subscription'; return false;">
-        <button type="submit">Subscribe</button>
+    <form action="#" method="post">
+        <button type="submit" disabled style="opacity:0.6; cursor:not-allowed;">Subscribe</button>
     </form>
 </div>
 

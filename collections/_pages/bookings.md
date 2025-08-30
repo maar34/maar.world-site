@@ -14,28 +14,82 @@ titles:
 key: live-set-information
 ---
 
-# <span class="material-symbols-outlined" style="font-size: 48px; vertical-align: middle;"> speaker_group </span> Bookings
-
-world.maar[at]gmail.com
+# <span class="material-symbols-outlined" style="font-size:48px;vertical-align:middle;">speaker_group</span> Bookings
 
 𝐵𝓇𝓊𝓃𝒶 𝒢𝓊𝒶𝓇𝓃𝒾𝑒𝓇𝒾
 
-<a href="https://drive.google.com/file/d/1F-Su5qTbid9XSR9oO4dKrrmizOTe8UEA/preview" rel="EPK" target="_blank">EPK:</a>
+<a href="/img/pdf/English-EPK_Bruna_Guarnieri.pdf" rel="EPK" target="_blank">Download EPK (PDF)</a>
 
-<iframe src="https://drive.google.com/file/d/1F-Su5qTbid9XSR9oO4dKrrmizOTe8UEA/preview" width="100%" height="480" allow="autoplay"></iframe>
+<!-- Correct PDF embed (removed stray space in filename, added fallback + responsive wrapper) -->
+<div class="pdf-embed">
+  <object
+    data="/img/pdf/English-EPK_Bruna_Guarnieri.pdf#toolbar=0"
+    type="application/pdf"
+    aria-label="Electronic Press Kit PDF"
+    width="100%"
+    height="1500px">
+      <iframe
+        src="/img/pdf/English-EPK_Bruna_Guarnieri.pdf"
+        title="EPK PDF"
+        style="width:100%;height:1400px;border:none;">
+      </iframe>
+      <p>Your browser cannot display embedded PDFs.
+        <a href="/img/pdf/English-EPK_Bruna_Guarnieri.pdf">Download the EPK</a>.
+      </p>
+  </object>
+</div>
 
-<a href="https://drive.google.com/drive/folders/1kq9b4TAnvlZtHXH6MLB3IdEEe50tJTx2?usp=sharing" rel="EPK" target="_blank">PHOTOS EPK</a>
+**Performance:** Live AV, Live, Hybrid, DJ set.  
+**Genres:** Regenerative Music / Union of world genres / You choose the genre, I choose the style :)  
+**Artist using:** Sensors, controllers, synths, custom Max software, Ableton Live, Traktor.  
+Live AV includes custom Max Software and Synths. 
 
-  **Performance:** Live AV, Live, Hybrid, Dj set. 
-<br>  
-  **Genres:** Regenerative Music / Union of world genres / You choose the genre, I choose the style :)
-<br>
-  **Artist using:** Sensors, controllers, synths, and computer with custom Max Software, Ableton Live, and Traktor.
-  Live AV is with custom Max Software and Synths. 
-<br>
-<h3>  Hybrid ( Live+DJ) sets </h3>
+<h3>Hybrid (Live + DJ) sets</h3>
 
+From thirty minutes to four hours: sonic or audiovisual journeys through classical elements, expeditions to solar systems, exoplanets, and stars.
 
-From thirty minutes to four hours experiences in the format of sonic or audiovisual journeys around concepts like the classical elements, or expeditions to different solar systems, exoplanets, and stars.
+Each concept appears under musical moods ranging from ambient and downtempo to house and techno, always adapting to the moment. Soundscapes and voices bring narrative strands. Over a decade assembling an archive of soundscapes, poetry, testimonies, native South American chants, radio signals, and eclectic music to connect people and cultures through sound.
 
-Each concept is represented under different musical moods ranging from ambient, and downtempo to house, and techno, always adapting to the note of the moment. The soundscapes and voices are elements that bring a singular narrative to each experience. For more than a decade, Bruna has been assembling a unique archive of soundscapes, poetry, testimonies, native South American chants, radio signals, and a selection of eclectic music to create experiences that connect people and cultures through sound.
+<div class="form-container" style="margin-top:72px;">
+  <h3>Contact</h3>
+  <p>Send a booking inquiry.</p>
+  <form
+    action="https://formspree.io/f/mqkrdkde"
+    method="POST"
+    class="contact-form">
+    <label>
+      Your name:
+      <input type="text" name="name" required>
+    </label>
+    <label>
+      Your email:
+      <input type="email" name="email" required>
+    </label>
+    <label>
+      Your message:
+      <textarea name="message" rows="6" required></textarea>
+    </label>
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+<div class="p-5"></div>
+
+<style>
+  .pdf-embed object,
+  .pdf-embed iframe {
+    box-shadow: 0 0 0 1px #222, 0 6px 28px -8px rgba(0,0,0,.6);
+    border-radius: 8px;
+    background:#111;
+  }
+  @media (max-width: 820px){
+    .pdf-embed object,
+    .pdf-embed iframe { height: 1100px !important; }
+  }
+  .contact-form label {
+    display:block;
+    font-size:.85rem;
+    letter-spacing:.05em;
+    margin:0 0 .75rem;
+  }
+</style>

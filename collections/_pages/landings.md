@@ -17,7 +17,15 @@ key: last events
 # <span class="material-symbols-outlined" style="font-size: 48px; vertical-align: middle;"> travel_explore </span> Landings
 ### Sonic events on planet earth
 
-<a href="https://collect.maar.world/docs/ent-worlds.html " rel="Maar World" target="_blank"> ENT Worlds</a>
+
+
+ENT Worlds
+
+- 19 / 11 / 2025  - 𝐵𝓇𝓊𝓃𝒶 𝒢𝓊𝒶𝓇𝓃𝒾𝑒𝓇𝒾 & Gabriel Vigliensoni - Web audio conference - Orbit and Bodies - 📍 IRCAM, Paris France  
+  [See article](/lab/en/orbits-and-bodies.html)
+
+- 13 / 09 / 2024  - 𝐵𝓇𝓊𝓃𝒶 𝒢𝓊𝒶𝓇𝓃𝒾𝑒𝓇𝒾 & Interplanetary Players Orchestra - 📍 Universidad de las Artes in Guayaquil, Ecuador  
+  [See article](/lab/en/ip-orchestra)
 
 - 17 / 12 / 2023  - 𝐵𝓇𝓊𝓃𝒶 𝒢𝓊𝒶𝓇𝓃𝒾𝑒𝓇𝒾 - Radio EP05 Recording - 📍 Espacio Pulpo, Mallorca Spain 
 - 29 / 10 / 2023  - 𝐵𝓇𝓊𝓃𝒶 𝒢𝓊𝒶𝓇𝓃𝒾𝑒𝓇𝒾 - Radio Streaming EP04 📍 MW-Lab-Berlin Germany 
@@ -118,4 +126,3 @@ key: last events
 
   ![branch](/img/branch.png)
 
-  

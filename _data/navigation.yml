@@ -20,3 +20,27 @@ header:
 
       # @end locale config
     url: /lab
+    
+  - titles:
+      # @start locale config
+      en      : &EN       <span class="material-symbols-outlined"> travel_explore </span> Landings
+      en-GB   : *EN
+      en-US   : *EN
+      en-CA   : *EN
+      en-AU   : *EN
+
+      # @end locale config
+    url: /landings
+
+  - titles:
+      # @start locale config
+      en      : &EN       <span class="material-symbols-outlined"> speaker_group </span> Bookings
+      en-GB   : *EN
+      en-US   : *EN
+      en-CA   : *EN
+      en-AU   : *EN
+
+      # @end locale config
+    url: /bookings
+
+
