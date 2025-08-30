@@ -12,7 +12,7 @@ header:
 <!-- HERO (single rotating line, smooth slide+fade every 1.5s) -->
 <div class="hero hero--center hero--statement rotating-hero single-line">
   <div class="hero__content">
-    <div class="rotator rotator--single" aria-live="polite">
+    <div class="rotator rotator--single rotator-sync" aria-live="polite">
       <div class="rotator-viewport">
         <div class="rotator-track">
           <span class="rot-line">A space for fluid music‑making</span>
@@ -69,7 +69,7 @@ header:
   <div class="wip-section" style="max-width:960px;margin:0 auto;padding:0 1.25rem;">
     <div class="hero hero--center hero--statement rotating-hero single-line hero--wip">
       <div class="hero__content">
-        <div class="rotator rotator--wip" aria-label="Work in progress translations" aria-live="polite">
+        <div class="rotator rotator--wip rotator-sync" aria-label="Work in progress translations" aria-live="polite">
           <div class="rotator-viewport">
             <div class="rotator-track">
               <span class="rot-line">Work in progress</span>
@@ -136,26 +136,6 @@ header:
 .section-block--videos { margin-top:3rem; }
 @media (min-width:1000px){ .section-block--videos { margin-top:3.5rem; } }
 </style>
-
-<script>
-// WIP multilingual rotator (independent)
-(function(){
-  const root=document.querySelector('.rotator--wip');
-  if(!root) return; 
-  const viewport=root.querySelector('.rotator-viewport');
-  const track=root.querySelector('.rotator-track');
-  const interval=2500; // total cycle per phrase
-  const moveDur=500;
-  let started=false, running=true;
-  function setH(){ const first=track.children[0]; if(first){ viewport.style.height= first.getBoundingClientRect().height+'px'; } }
-  function step(){ if(!running) return; const first=track.children[0]; const next=track.children[1]; if(!first||!next) return; const h=first.getBoundingClientRect().height; track.style.transition=`transform ${moveDur}ms cubic-bezier(.65,.05,.25,1)`; first.classList.add('fade-out'); next.classList.add('fade-in'); track.style.transform=`translateY(-${h}px)`; const onEnd=()=>{ track.removeEventListener('transitionend',onEnd); track.style.transition='none'; track.appendChild(first); track.style.transform='translateY(0)'; first.classList.remove('fade-out'); track.children[0].classList.remove('fade-in'); void track.offsetWidth; setH(); setTimeout(step, Math.max(0, interval-moveDur)); }; track.addEventListener('transitionend',onEnd); }
-  function start(){ if(started) return; started=true; setTimeout(step, interval); }
-  setH(); window.addEventListener('resize',()=>setH()); start();
-  root.addEventListener('mouseenter',()=>running=false);
-  root.addEventListener('mouseleave',()=>{ if(!running){ running=true; setTimeout(step, interval); } });
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){ running=false; }
-})();
-</script>
 
 <!-- VIDEO SWIPER MOVED TO BOTTOM -->
 <section class="section-block section-block--videos">
@@ -287,129 +267,80 @@ header:
 <!-- UPDATED (replace previous ROTATOR SCRIPT + related minor CSS improvements) -->
 <script>
 (function(){
-  const track = document.querySelector('.rotator--single .rotator-track');
-  const viewport = document.querySelector('.rotator--single .rotator-viewport');
-  if(!track || !viewport) return;
+  const DWELL = 3600; // ms each line fully visible
+  const MOVE  = 680;  // ms transition
+  const EASE  = 'cubic-bezier(.65,.05,.25,1)';
+  const rotators = Array.from(document.querySelectorAll('.rotator-sync'));
+  if(!rotators.length) return;
 
-  const interval = 2500;      // total cycle per line
-  const moveDur  = 500;       // slide duration
-  let running = true;
-  let resizing = false;
-  let started  = false;
-  let resizeTimer;
-
-  // Prevent initial cut: hide overflow & opacity until sized
-  viewport.classList.add('rotator-init');
-
-  function setViewportHeight(){
-    const first = track.children[0];
-    if(first){
-      // Temporarily reset transforms to measure natural height
-      const prevTransition = track.style.transition;
-      const prevTransform  = track.style.transform;
-      track.style.transition = 'none';
-      track.style.transform  = 'translateY(0)';
-      const h = first.getBoundingClientRect().height;
-      viewport.style.height = h + 'px';
-      // Restore (no jump because transform was 0)
-      track.style.transition = prevTransition;
-      track.style.transform  = prevTransform;
+  function computeMaxHeight(r){
+    const {track,viewport} = r.__rt;
+    let maxH = 0;
+    const prevT = track.style.transition;
+    const prevX = track.style.transform;
+    track.style.transition='none';
+    track.style.transform='translateY(0)';
+    for(const child of track.children){
+      const h = child.getBoundingClientRect().height;
+      if(h>maxH) maxH=h;
     }
+    viewport.style.height = maxH + 'px';
+    track.style.transition = prevT;
+    track.style.transform  = prevX;
   }
 
-  function startRotation(){
-    if(started) return;
-    started = true;
-    viewport.classList.remove('rotator-init');
-    setTimeout(step, interval);
-  }
+  rotators.forEach(r=>{
+    const viewport = r.querySelector('.rotator-viewport');
+    const track    = r.querySelector('.rotator-track');
+    if(!viewport||!track) return;
+    r.__rt = {viewport,track,running:true};
+    viewport.classList.add('rotator-init');
+    // Wait for layout settle
+    requestAnimationFrame(()=>{ computeMaxHeight(r); viewport.classList.remove('rotator-init'); });
+    r.addEventListener('mouseenter',()=>r.__rt.running=false);
+    r.addEventListener('mouseleave',()=>{ if(!r.__rt.running) r.__rt.running=true; });
+  });
 
-  function step(){
-    if(!running) return;
+  function advance(r){
+    if(!r.__rt.running) return;
+    const {track} = r.__rt;
     const first = track.children[0];
     const next  = track.children[1];
-    if(!first || !next) return;
-    const h = first.getBoundingClientRect().height;
-
-    track.style.transition = `transform ${moveDur}ms cubic-bezier(.65,.05,.25,1)`;
+    if(!first||!next) return;
+    const h = first.getBoundingClientRect().height; // height locked by viewport
+    track.style.transition = `transform ${MOVE}ms ${EASE}`;
     first.classList.add('fade-out');
     next.classList.add('fade-in');
     track.style.transform = `translateY(-${h}px)`;
-
-    const onEnd = ()=>{
-      track.removeEventListener('transitionend', onEnd);
-      track.style.transition = 'none';
+    const done=()=>{
+      track.removeEventListener('transitionend',done);
+      track.style.transition='none';
       track.appendChild(first);
-      track.style.transform = 'translateY(0)';
+      track.style.transform='translateY(0)';
       first.classList.remove('fade-out');
       track.children[0].classList.remove('fade-in');
-      void track.offsetWidth;
-      if(!resizing) setViewportHeight();
-      const stayTime = Math.max(0, interval - moveDur);
-      setTimeout(step, stayTime);
     };
-    track.addEventListener('transitionend', onEnd);
+    track.addEventListener('transitionend',done);
   }
 
-  function initHeightsAndStart(){
-    setViewportHeight();
-    // small double-Raf to ensure fonts/layout settled
-    requestAnimationFrame(()=>requestAnimationFrame(()=>{
-      setViewportHeight();
-      startRotation();
-    }));
-  }
+  function tick(){ rotators.forEach(advance); }
+  setTimeout(()=>{ tick(); setInterval(tick, DWELL); }, DWELL);
 
-  // Initial sizing after DOM
-  initHeightsAndStart();
-
-  // After fonts load (prevents first-frame clipping if web fonts swap)
-  if (document.fonts && document.fonts.ready) {
-    document.fonts.ready.then(()=>{
-      setViewportHeight();
-    });
-  }
-
-  // Also re-measure on full window load (images / metrics)
-  window.addEventListener('load', ()=>{
-    setViewportHeight();
-  });
-
+  let resizeTimer;
   window.addEventListener('resize', ()=>{
-    resizing = true;
-    setViewportHeight();
     clearTimeout(resizeTimer);
-    resizeTimer = setTimeout(()=>{ resizing=false; setViewportHeight(); },160);
+    resizeTimer = setTimeout(()=> rotators.forEach(computeMaxHeight), 140);
   });
 
-  // Pause on hover/focus
-  const rotator = document.querySelector('.rotator--single');
-  ['mouseenter','focusin'].forEach(e=>rotator.addEventListener(e,()=>running=false));
-  ['mouseleave','focusout'].forEach(e=>rotator.addEventListener(e,()=>{
-    if(!running){
-      running = true;
-      setTimeout(step, interval);
-    }
-  }));
-
-  // Reduced motion
-  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
-    running = false;
-  }
+  if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){ rotators.forEach(r=>r.__rt.running=false); }
 })();
 </script>
 
 <style>
-/* Add / adjust these beneath existing rotator styles */
-.rotator-viewport.rotator-init {
-  opacity: 0;
-}
-.rotator-viewport {
-  transition: opacity .35s ease;
-}
-.rotator-viewport:not(.rotator-init) {
-  opacity: 1;
-}
+/* Minor rotator viewport transition (shared) */
+.rotator-viewport.rotator-init { opacity:0; }
+.rotator-viewport { transition:opacity .35s ease; }
+.rotator-viewport:not(.rotator-init){ opacity:1; }
 </style>
 
 <!-- ROTATOR STYLES (append / merge) -->
