@@ -21,7 +21,7 @@ key: live-set-information
 <a href="/img/pdf/English-EPK_Bruna_Guarnieri.pdf" rel="EPK" target="_blank">Download EPK (PDF)</a>
 
 <!-- Correct PDF embed (removed stray space in filename, added fallback + responsive wrapper) -->
-<div class="pdf-embed">
+<div class="pdf-embed pdf-preview">
   <object
     data="/img/pdf/English-EPK_Bruna_Guarnieri.pdf#toolbar=0"
     type="application/pdf"
@@ -37,6 +37,9 @@ key: live-set-information
         <a href="/img/pdf/English-EPK_Bruna_Guarnieri.pdf">Download the EPK</a>.
       </p>
   </object>
+  <div class="pdf-fallback" aria-hidden="true" style="display:none;">
+    <a class="button button--outline-info button--rounded" style="font-size:.75rem;" target="_blank" rel="noopener" href="/img/pdf/English-EPK_Bruna_Guarnieri.pdf">Open / Download EPK (PDF)</a>
+  </div>
 </div>
 
 **Performance:** Live AV, Live, Hybrid, DJ set.  
@@ -85,6 +88,11 @@ Each concept appears under musical moods ranging from ambient and downtempo to h
   @media (max-width: 820px){
     .pdf-embed object,
     .pdf-embed iframe { height: 1100px !important; }
+  }
+  @media (max-width:640px){
+    .pdf-embed object { display:none; }
+    .pdf-embed .pdf-fallback { display:block !important; text-align:center; margin:1rem 0 0; }
+    a[rel="EPK"] { display:none !important; } /* hide duplicate link on mobile */
   }
   .contact-form label {
     display:block;
