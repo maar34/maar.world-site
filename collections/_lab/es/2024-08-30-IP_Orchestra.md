@@ -24,61 +24,42 @@ En nuestro laboratorio de creación implementaremos un proceso de investigación
 </div>
 
 
+<!-- Swiper init (unificado) -->
 <script>
   {%- include scripts/lib/swiper.js -%}
-  var SOURCES = window.TEXT_VARIABLES.sources;
-  window.Lazyload.js(SOURCES.jquery, function() {
-    $('.swiper-demo--0').swiper();
-    $('.swiper-demo--1').swiper();
-    $('.swiper-demo--2').swiper();
-    $('.swiper-demo--3').swiper();
-    $('.swiper-demo--4').swiper({ animation: true });
-  });
+  (function(){
+    var SOURCES=(window.TEXT_VARIABLES&&window.TEXT_VARIABLES.sources)||{};
+    function init(sel){ if(window.jQuery && jQuery(sel).swiper){ jQuery(sel).swiper({animation:true}); } }
+    function start(){ init('.swiper-demo--es-primary'); init('.swiper-demo--es-secondary'); }
+    if(window.Lazyload && SOURCES.jquery){ window.Lazyload.js(SOURCES.jquery,start); } else { document.addEventListener('DOMContentLoaded',start);} 
+  })();
 </script>
 
-
-<style>
-  .swiper-demo--3 {
-    background-color: rgb(0, 0, 255); /* Sets the background color to white */
-  }
-    .swiper-demo--3 .swiper__slide img {
-    width: 100%; /* Ensures images are fully responsive */
-    max-width: 100%; /* Ensures images do not exceed their container's width */
-    height: auto; /* Maintains aspect ratio */
-  }
-</style>
-
-<div class="swiper my-3 swiper-demo swiper-demo--image swiper-demo--3">
+<!-- Swiper Primario (tarjetas) -->
+<div class="swiper my-3 swiper-demo swiper-demo--image swiper-demo--es-primary swiper--tall swiper--separated">
   <div class="swiper__wrapper">
     <!-- Diapositiva 1 -->
-    <div class="swiper__slide">
-      <img class="lightbox-ignore" src="https://collect.maar.world/img/docs/int-players/07_ip-card.jpg" style="max-width: 800px;"/>
-      <div class="text-content">
-        <h2>I</h2>
-        <p>Explora la música, superponiendo sonidos con controles que varían según las cartas que juegues, creando experiencias sonoras ricas y originales.</p>
-      </div>
+    <div class="swiper__slide orb-slide">
+      <h3 class="orb-step">I</h3>
+      <div class="orb-media"><img class="lightbox-ignore" src="/img/interplanetary-players/07_ip-card.jpg" alt="Carta layering"/></div>
+      <div class="orb-desc">Explora la música superponiendo sonidos con controles que varían según las cartas que juegas, creando experiencias sonoras ricas y originales.</div>
     </div>
     <!-- Diapositiva 2 -->
-    <div class="swiper__slide">
-      <img class="lightbox-ignore" src="https://collect.maar.world/img/docs/int-players/10_ip-transit.png" style="max-width: 800px;"/>
-      <div class="text-content">
-        <h2>II</h2>
-        <p>Recrea música de forma intuitiva, haciendo que la creación de sonido sea accesible y divertida para todos, desde músicos profesionales hasta aquellos sin experiencia previa.</p>
-      </div>
+    <div class="swiper__slide orb-slide">
+      <h3 class="orb-step">II</h3>
+      <div class="orb-media"><img class="lightbox-ignore" src="/img/interplanetary-players/10_ip-transit.png" alt="Mapeo de tránsito"/></div>
+      <div class="orb-desc">Recrea música de forma intuitiva; la creación sonora se vuelve accesible y divertida para todxs, desde músicos profesionales hasta quienes no tienen experiencia previa.</div>
     </div>
     <!-- Diapositiva 3 -->
-    <div class="swiper__slide">
-      <img class="lightbox-ignore" src="https://collect.maar.world/img/docs/int-players/08_ip-max-24.jpg" style="max-width: 800px;"/>
-      <div class="text-content">
-        <h2>III</h2>
-        <p>Estamos en el inicio de este viaje, incribete al Taller para la creación de la primera Orbiters Orchestra.</p>
-      </div>
+    <div class="swiper__slide orb-slide">
+      <h3 class="orb-step">III</h3>
+      <div class="orb-media"><img class="lightbox-ignore" src="/img/interplanetary-players/08_ip-max-24.jpg" alt="Patch taller"/></div>
+      <div class="orb-desc">Estamos al inicio de este viaje. Inscríbete para co-crear la primera Orbiters Orchestra.</div>
     </div>
   </div>
   <div class="swiper__button swiper__button--prev fas fa-chevron-left"></div>
   <div class="swiper__button swiper__button--next fas fa-chevron-right"></div>
 </div>
-
 
 ### Programación
 11 de septiembre 2024: Dia 1 de taller. 10:00am 01:00pm <br>
@@ -98,46 +79,14 @@ Todos los eventos se llevarán a cabo en la Universidad de las Artes, Guayaquil.
 ### Invitación Especial
 Queremos invitar a estudiantes y profesionales de diversas disciplinas a unirse a nosotros en este viaje sensorial y creativo. Juntxs, podemos explorar múltiples perspectivas de la música y crear algo verdaderamente innovador y unificador. ¡Esperamos verlos en nuestros talleres y compartir juntos esta experiencia interplanetaria!
 
-<script>
-  {%- include scripts/lib/swiper.js -%}
-  var SOURCES = window.TEXT_VARIABLES.sources;
-  window.Lazyload.js(SOURCES.jquery, function() {
-    $('.swiper-demo--0').swiper();
-    $('.swiper-demo--1').swiper();
-    $('.swiper-demo--2').swiper();
-    $('.swiper-demo--3').swiper();
-    $('.swiper-demo--4').swiper({ animation: true });
-  });
-</script>
-
-<style>
-  .swiper-demo--3 {
-    background-color: rgb(0, 0, 255); /* El color de fondo se establece en azul */
-  }
-</style>
-
-<div class="swiper my-3 swiper-demo swiper-demo--image swiper-demo--3">
+<!-- Swiper Secundario (fotos) -->
+<div class="swiper my-3 swiper-demo swiper-demo--image swiper-demo--es-secondary swiper--tall swiper--plain">
   <div class="swiper__wrapper">
-    <!-- Diapositiva 1 -->
-    <div class="swiper__slide">
-      <img class="lightbox-ignore" src="https://collect.maar.world/img/landing/2024_ss-12.jpeg" alt="Slide 1"/>
-    </div>
-    <!-- Diapositiva 2 -->
-    <div class="swiper__slide">
-      <img class="lightbox-ignore" src="https://collect.maar.world/img/landing/2024_ss-10.jpeg" alt="Slide 2"/>
-    </div>
-    <!-- Diapositiva 3 -->
-    <div class="swiper__slide">
-      <img class="lightbox-ignore" src="https://collect.maar.world/img/landing/2024_ss-8.jpeg" alt="Slide 3"/>
-    </div>
-    <!-- Diapositiva 4 -->
-    <div class="swiper__slide">
-      <img class="lightbox-ignore" src="https://collect.maar.world/img/landing/2024_ss-11.jpeg" alt="Slide 4"/>
-    </div>
-    <!-- Diapositiva 5 -->
-    <div class="swiper__slide">
-      <img class="lightbox-ignore" src="https://collect.maar.world/img/landing/2024_ss-2.jpeg" alt="Slide 5"/>
-    </div>
+    <div class="swiper__slide"><img class="lightbox-ignore" src="/img/collect-landing/2024_ss-12.jpeg" alt="Sesión 12"/></div>
+    <div class="swiper__slide"><img class="lightbox-ignore" src="/img/collect-landing/2024_ss-10.jpeg" alt="Sesión 10"/></div>
+    <div class="swiper__slide"><img class="lightbox-ignore" src="/img/collect-landing/2024_ss-8.jpeg" alt="Sesión 8"/></div>
+    <div class="swiper__slide"><img class="lightbox-ignore" src="/img/collect-landing/2024_ss-11.jpeg" alt="Sesión 11"/></div>
+    <div class="swiper__slide"><img class="lightbox-ignore" src="/img/collect-landing/2024_ss-2.jpeg" alt="Sesión 2"/></div>
   </div>
   <div class="swiper__button swiper__button--prev fas fa-chevron-left"></div>
   <div class="swiper__button swiper__button--next fas fa-chevron-right"></div>
@@ -228,4 +177,20 @@ Queremos invitar a estudiantes y profesionales de diversas disciplinas a unirse 
     </a>
     <img src="/img/about/mw-logo-transparent.png" alt="Logo Interplanetary Orchestra">
 </div>
+
+<style>
+/* Estilos específicos del swiper (ES) */
+.swiper--tall { max-height:none; }
+@media (min-width:920px){ .swiper--tall { max-height:820px; } }
+.swiper--tall .swiper__slide img { height:100%; object-fit:cover; }
+.swiper--separated .slide-caption { display:none !important; }
+.orb-slide { display:flex; flex-direction:column; align-items:center; gap:1.1rem; padding:1rem 1rem 1.6rem; }
+.orb-step { font-size:1.25rem; font-weight:600; letter-spacing:.18em; background:rgba(0,0,0,.35); padding:.45rem .85rem .5rem; border-radius:8px; backdrop-filter:blur(4px); box-shadow:0 0 0 1px rgba(0,0,0,.4),0 2px 6px -2px rgba(0,0,0,.6); margin:0; }
+.orb-media { width:100%; max-width:880px; }
+.orb-media img { width:100%; height:auto; display:block; border-radius:8px; }
+.orb-desc { max-width:880px; font-size:.95rem; line-height:1.5; opacity:.92; text-align:left; }
+@media (min-width:900px){ .orb-step { font-size:1.35rem; } }
+@media (max-width:860px){ .orb-step { font-size:1.3rem; } .orb-desc { font-size:.87rem; } .orb-slide { gap:.9rem; padding:.85rem .85rem 1.3rem; } }
+@media (max-width:480px){ .orb-step { font-size:1.1rem; padding:.4rem .75rem .45rem; } .orb-desc { font-size:.8rem; } }
+</style>
 

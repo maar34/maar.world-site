@@ -8,7 +8,7 @@ header:
       en-CA   : *EN
       en-AU   : *EN
       # @end locale config
-    url: /interplanetary-players
+    url: /orbiters
 
   - titles:
       # @start locale config

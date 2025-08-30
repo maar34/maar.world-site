@@ -5,7 +5,6 @@ permalink: /lab/en/ip-orchestra
 cover: https://dl.dropboxusercontent.com/s/9vdaaxsmuzklbp3/1-ent-player-yellow.jpg?raw=1
 tags: IP EN
 lang: en
-
 ---
 ### 🐚 Perhaps the relationship between human beings is neither vertical nor horizontal, but orbital. 🧬
 
@@ -18,68 +17,44 @@ In our creation lab, we will implement a research process designed to form an en
 <a href="/lab/en/ip-orchestra-design">Orbiters Orchestra</a> proposes the co-creation of an integral art experience, where we aim to generate a meaningful experience by integrating artists and the audience, along with artistic and scientific media. We transform computers and mobiles into meta-musical-instruments that combine multiple functionalities, synchronizing creations with both human movement and the movements of planets in the Kepler-47 star system, to co-create otherworldy soundscapes with a touch of stardust.
 
 <!-- Disabled Subscribe Button (keeps appearance, disables click) -->
-<div class="contact-form">
-    <form action="#" method="post">
-        <button type="submit" disabled style="opacity:0.6; cursor:not-allowed;">Subscribe</button>
-    </form>
-</div>
+<div class="contact-form"><form action="#" method="post"><button type="submit" disabled style="opacity:0.6; cursor:not-allowed;">Subscribe</button></form></div>
 
-
+<!-- Swiper init (unified) -->
 <script>
   {%- include scripts/lib/swiper.js -%}
-  var SOURCES = window.TEXT_VARIABLES.sources;
-  window.Lazyload.js(SOURCES.jquery, function() {
-    $('.swiper-demo--0').swiper();
-    $('.swiper-demo--1').swiper();
-    $('.swiper-demo--2').swiper();
-    $('.swiper-demo--3').swiper();
-    $('.swiper-demo--4').swiper({ animation: true });
-  });
+  (function(){
+    var SOURCES = (window.TEXT_VARIABLES && window.TEXT_VARIABLES.sources) || {};
+    function init(sel){ if(window.jQuery && jQuery(sel).swiper){ jQuery(sel).swiper({animation:true}); } }
+    function start(){ init('.swiper-demo--3'); init('.swiper-demo--4'); }
+    if(window.Lazyload && SOURCES.jquery){ window.Lazyload.js(SOURCES.jquery,start); } else { document.addEventListener('DOMContentLoaded',start); }
+  })();
 </script>
 
-
-<style>
-  .swiper-demo--3 {
-    background-color: rgb(0, 0, 255); /* Sets the background color to white */
-  }
-    .swiper-demo--3 .swiper__slide img {
-    width: 100%; /* Ensures images are fully responsive */
-    max-width: 100%; /* Ensures images do not exceed their container's width */
-    height: auto; /* Maintains aspect ratio */
-  }
-</style>
-
-<div class="swiper my-3 swiper-demo swiper-demo--image swiper-demo--3">
+<!-- Primary Swiper (cards) -->
+<div class="swiper my-3 swiper-demo swiper-demo--image swiper-demo--3 swiper--tall swiper--separated">
   <div class="swiper__wrapper">
     <!-- Slide 1 -->
-    <div class="swiper__slide">
-      <img class="lightbox-ignore" src="/img/interplanetary-players/07_ip-card.jpg" style="max-width: 800px;"/>
-      <div class="text-content">
-        <h2>I</h2>
-        <p>Explore music by layering sounds with controls that vary depending on the cards you play, creating rich and original sonic experiences.</p>
-      </div>
+    <div class="swiper__slide orb-slide">
+      <h3 class="orb-step">I</h3>
+      <div class="orb-media"><img class="lightbox-ignore" src="/img/interplanetary-players/07_ip-card.jpg" alt="Card layering"/></div>
+      <div class="orb-desc">Explore music by layering sounds with controls that vary depending on the cards you play, creating rich and original sonic experiences.</div>
     </div>
     <!-- Slide 2 -->
-    <div class="swiper__slide">
-      <img class="lightbox-ignore" src="/img/interplanetary-players/10_ip-transit.png" style="max-width: 800px;"/>
-      <div class="text-content">
-        <h2>II</h2>
-        <p>Recreate music intuitively, making sound creation accessible and fun for everyone, from professional musicians to those with no prior experience.</p>
-      </div>
+    <div class="swiper__slide orb-slide">
+      <h3 class="orb-step">II</h3>
+      <div class="orb-media"><img class="lightbox-ignore" src="/img/interplanetary-players/10_ip-transit.png" alt="Transit mapping"/></div>
+      <div class="orb-desc">Recreate music intuitively, making sound creation accessible and fun for everyone, from professional musicians to those with no prior experience.</div>
     </div>
     <!-- Slide 3 -->
-    <div class="swiper__slide">
-      <img class="lightbox-ignore" src="/img/interplanetary-players/08_ip-max-24.jpg" style="max-width: 800px;"/>
-      <div class="text-content">
-        <h2>III</h2>
-        <p>We are at the beginning of this journey. Sign up for the workshop to help create the first Orbiters Orchestra.</p>
-      </div>
+    <div class="swiper__slide orb-slide">
+      <h3 class="orb-step">III</h3>
+      <div class="orb-media"><img class="lightbox-ignore" src="/img/interplanetary-players/08_ip-max-24.jpg" alt="Workshop patch"/></div>
+      <div class="orb-desc">We are at the beginning of this journey. Sign up for the workshop to help create the first Orbiters Orchestra.</div>
     </div>
   </div>
   <div class="swiper__button swiper__button--prev fas fa-chevron-left"></div>
   <div class="swiper__button swiper__button--next fas fa-chevron-right"></div>
 </div>
-
 
 ### Schedule
 September 11, 2024: Workshop Day 1. 10:00am - 1:00pm <br>
@@ -90,67 +65,23 @@ September 13, 2024: Workshop Day 3. 10:00am - 11:00am + Setup <br>
 All events will be held at the Universidad de las Artes, Guayaquil.
 
 <!-- Disabled Subscribe Button (second instance) -->
-<div class="contact-form">
-    <form action="#" method="post">
-        <button type="submit" disabled style="opacity:0.6; cursor:not-allowed;">Subscribe</button>
-    </form>
-</div>
-
+<div class="contact-form"><form action="#" method="post"><button type="submit" disabled style="opacity:0.6; cursor:not-allowed;">Subscribe</button></form></div>
 
 ### Special Invitation
 We would like to invite students and professionals from various disciplines to join us on this sensory and creative journey. Together, we can explore multiple perspectives on music and create something truly innovative and unifying. We look forward to seeing you in our workshops and sharing this interplanetary experience together!
 
-<script>
-  {%- include scripts/lib/swiper.js -%}
-  var SOURCES = window.TEXT_VARIABLES.sources;
-  window.Lazyload.js(SOURCES.jquery, function() {
-    $('.swiper-demo--0').swiper();
-    $('.swiper-demo--1').swiper();
-    $('.swiper-demo--2').swiper();
-    $('.swiper-demo--3').swiper();
-    $('.swiper-demo--4').swiper({ animation: true });
-  });
-</script>
-
-<style>
-  .swiper-demo--4 {
-    background-color: rgb(0, 0, 255);
-  }
-  .swiper-demo--4 .swiper__slide img {
-    width: 100%;
-    max-width: 100%;
-    height: auto;
-  }
-</style>
-
-<div class="swiper my-3 swiper-demo swiper-demo--image swiper-demo--4">
+<!-- Secondary Swiper (photos) -->
+<div class="swiper my-3 swiper-demo swiper-demo--image swiper-demo--4 swiper--tall swiper--plain">
   <div class="swiper__wrapper">
-    <!-- Slide 1 -->
-    <div class="swiper__slide">
-      <img class="lightbox-ignore" src="/img/collect-landing/2024_ss-12.jpeg" alt="Slide 1"/>
-    </div>
-    <!-- Slide 2 -->
-    <div class="swiper__slide">
-      <img class="lightbox-ignore" src="/img/collect-landing/2024_ss-10.jpeg" alt="Slide 2"/>
-    </div>
-    <!-- Slide 3 -->
-    <div class="swiper__slide">
-      <img class="lightbox-ignore" src="/img/collect-landing/2024_ss-8.jpeg" alt="Slide 3"/>
-    </div>
-    <!-- Slide 4 -->
-    <div class="swiper__slide">
-      <img class="lightbox-ignore" src="/img/collect-landing/2024_ss-11.jpeg" alt="Slide 4"/>
-    </div>
-    <!-- Slide 5 -->
-    <div class="swiper__slide">
-      <img class="lightbox-ignore" src="/img/collect-landing/2024_ss-2.jpeg" alt="Slide 5"/>
-    </div>
+    <div class="swiper__slide"><img class="lightbox-ignore" src="/img/collect-landing/2024_ss-12.jpeg" alt="Session 12"/></div>
+    <div class="swiper__slide"><img class="lightbox-ignore" src="/img/collect-landing/2024_ss-10.jpeg" alt="Session 10"/></div>
+    <div class="swiper__slide"><img class="lightbox-ignore" src="/img/collect-landing/2024_ss-8.jpeg" alt="Session 8"/></div>
+    <div class="swiper__slide"><img class="lightbox-ignore" src="/img/collect-landing/2024_ss-11.jpeg" alt="Session 11"/></div>
+    <div class="swiper__slide"><img class="lightbox-ignore" src="/img/collect-landing/2024_ss-2.jpeg" alt="Session 2"/></div>
   </div>
   <div class="swiper__button swiper__button--prev fas fa-chevron-left"></div>
   <div class="swiper__button swiper__button--next fas fa-chevron-right"></div>
 </div>
-
-
 
 <!-- New section for "Control the Sound:" -->
 <section class="grid">
@@ -179,23 +110,14 @@ We would like to invite students and professionals from various disciplines to j
 <div class="p-5"></div>
 
 <!-- Disabled Subscribe Button (keeps appearance, disables click) -->
-<div class="contact-form">
-    <form action="#" method="post">
-        <button type="submit" disabled style="opacity:0.6; cursor:not-allowed;">Subscribe</button>
-    </form>
-</div>
-
-
+<div class="contact-form"><form action="#" method="post"><button type="submit" disabled style="opacity:0.6; cursor:not-allowed;">Subscribe</button></form></div>
 
 ### Facilitator Profile
 
 <br>
 <div style="text-align: left;">
   <img src="/img/about/Bruna.jpeg" alt="Image" style="border-radius: 100%; border: 1px solid #000; box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5); max-width: 30%; float: left; margin-right: 20px; margin-bottom: 10px;">
-  
-  <p>
-    Bruna Maar Guarneri Colasso (She/They), a sound artist and engineer based in Berlin, has worked on transdisciplinary creations at the intersection of art, science, and technology. With studies in Sound Design and Engineering in Montevideo and Santiago de Chile, Bruna Maar has collaborated on sound design and interaction in numerous large-scale installations across America and Europe. Among her notable achievements are the Hackathon award at the S+T+ARTS SONAR 2021 Music and AI Festival, sound design and experience for the Uruguayan Pavilion at the Venice Architecture Biennale in 2021 and 2018, and the Uruguayan and Chilean pavilions at Expo Milan 2015. She has also been a developer in artistic collectives such as Head Brothers, Exoplanetas, and Aventures Sonores. For more than a decade, she has been compiling a unique archive of soundscapes, poetry, testimonies, South American native songs, radio signals, and an eclectic selection of music to create experiences that connect people and cultures through sound.
-  </p>
+  <p>Bruna Maar Guarneri Colasso (She/They), a sound artist and engineer based in Berlin, has worked on transdisciplinary creations at the intersection of art, science, and technology. With studies in Sound Design and Engineering in Montevideo and Santiago de Chile, Bruna Maar has collaborated on sound design and interaction in numerous large-scale installations across America and Europe. Among her notable achievements are the Hackathon award at the S+T+ARTS SONAR 2021 Music and AI Festival, sound design and experience for the Uruguayan Pavilion at the Venice Architecture Biennale in 2021 and 2018, and the Uruguayan and Chilean pavilions at Expo Milan 2015. She has also been a developer in artistic collectives such as Head Brothers, Exoplanetas, and Aventures Sonores. For more than a decade, she has been compiling a unique archive of soundscapes, poetry, testimonies, South American native songs, radio signals, and an eclectic selection of music to create experiences that connect people and cultures through sound.</p>
 </div>
 <br>
 
@@ -204,35 +126,46 @@ We would like to invite students and professionals from various disciplines to j
 <div class="form-container">
   <h3>Contact me</h3>
   <p>Thank you for your interest in our workshops. If you need anything, feel free to reach out.</p>
-  
-  <form
-    action="https://formspree.io/f/mqkrdkde"
-    method="POST"
-    class="contact-form"
-  >
-    <label>
-      Your name:
-      <input type="text" name="name" required>
-    </label>
-    <label>
-      Your email:
-      <input type="email" name="email" required>
-    </label>
-    <label>
-      Your message:
-      <textarea name="message" required></textarea>
-    </label>
+  <form action="https://formspree.io/f/mqkrdkde" method="POST" class="contact-form">
+    <label>Your name:<input type="text" name="name" required></label>
+    <label>Your email:<input type="email" name="email" required></label>
+    <label>Your message:<textarea name="message" required></textarea></label>
     <button type="submit">Send</button>
   </form>
 </div>
 
 <div class="p-5"></div>
 
-
 <div class="logo-grid">
-    <img src="https://www.dropbox.com/scl/fi/nh8l7j56uidh2cdd4uut4/MMAT-BLANCO-2024.png?rlkey=jgmdll83abavbv06hnzn934jv&raw=1" alt="Logo MMAT">
-    <a href="https://www.uartes.edu.ec" target="_blank">
-        <img src="https://www.dropbox.com/scl/fi/h2x74tzmdz97nd871blek/LOGO-UARTES-BLANCO.png?rlkey=2qykue2qyo0zyt5ch4fkic7kd&st=01dslfp8&raw=1" alt="Logo UArtes">
-    </a>
-    <img src="/img/about/mw-logo-transparent.png" alt="Logo Interplanetary Orchestra">
+  <img src="https://www.dropbox.com/scl/fi/nh8l7j56uidh2cdd4uut4/MMAT-BLANCO-2024.png?rlkey=jgmdll83abavbv06hnzn934jv&raw=1" alt="Logo MMAT">
+  <a href="https://www.uartes.edu.ec" target="_blank"><img src="https://www.dropbox.com/scl/fi/h2x74tzmdz97nd871blek/LOGO-UARTES-BLANCO.png?rlkey=2qykue2qyo0zyt5ch4fkic7kd&st=01dslfp8&raw=1" alt="Logo UArtes"></a>
+  <img src="/img/about/mw-logo-transparent.png" alt="Logo Interplanetary Orchestra">
 </div>
+
+<style>
+/* Taller swipers for this page */
+.swiper--tall { max-height:none; }
+@media (min-width: 920px){ .swiper--tall { max-height:820px; } }
+.swiper--tall .swiper__slide img { height:100%; object-fit:cover; }
+
+/* OLD caption overrides no longer needed for separated swiper */
+.swiper--separated .slide-caption { display:none !important; }
+
+/* Separated layout styles */
+.orb-slide { display:flex; flex-direction:column; align-items:center; gap:1.1rem; padding:1rem 1rem 1.6rem; }
+.orb-step { font-size:1.25rem; font-weight:600; letter-spacing:.18em; background:rgba(0,0,0,.35); padding:.45rem .85rem .5rem; /* border removed */ border-radius:8px; backdrop-filter:blur(4px); box-shadow:0 0 0 1px rgba(0,0,0,.4),0 2px 6px -2px rgba(0,0,0,.6); margin:0; }
+.orb-media { width:100%; max-width:880px; }
+.orb-media img { width:100%; height:auto; display:block; border-radius:8px; }
+.orb-desc { max-width:880px; font-size:.95rem; line-height:1.5; opacity:.92; text-align:left; }
+
+@media (min-width:900px){ .orb-step { font-size:1.35rem; } }
+@media (max-width:860px){
+  .orb-step { font-size:1.4rem; letter-spacing:.18em; }
+  .orb-desc { font-size:.87rem; }
+  .orb-slide { gap:.9rem; padding:.85rem .85rem 1.3rem; }
+}
+@media (max-width:480px){
+  .orb-step { font-size:1.1rem; padding:.45rem .8rem .5rem; }
+  .orb-desc { font-size:.8rem; }
+}
+</style>

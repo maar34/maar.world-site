@@ -91,14 +91,18 @@ article_header:
     <div class="hero hero--center hero--dark" style='background-color: #000000;'>
       <div class="hero__content">
         <h3>Control the Sound:</h3>
-        <div class="media-frame ratio-169"><iframe src="https://play.maar.world/?g=335&s=1&c=0" title="Control the Sound Interactive" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="container">
+          <iframe src="https://play.maar.world/?g=335&s=1&c=0" class="responsive-iframe" title="Control the Sound Interactive" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
         <p>Please unmute your device and press the PLAY ▶️ button. Adjust the sound by moving the XYZ KNOBS up or down until you like what you hear. If you want to go back to the original sound, press the hexagonal ⬢ buttons to reset the knobs to their equilibrium.</p>
       </div>
     </div>
     <div class="hero hero--center hero--dark" style='background-color: #000000;'>
       <div class="hero__content">
         <h3>Explore Regenerative Modes:</h3>
-        <div class="media-frame ratio-169"><iframe src="https://play.maar.world/?g=8&s=0&c=21" title="Explore Regenerative Modes Interactive" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+        <div class="container">
+          <iframe src="https://play.maar.world/?g=8&s=0&c=21" class="responsive-iframe" title="Explore Regenerative Modes Interactive" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
         <p>Experiment with 7 unique modes, creating with real data from exoplanets and their transits and orbits across different time scales. Leave the button pressed to get hints about these parameters.</p>
       </div>
     </div>
