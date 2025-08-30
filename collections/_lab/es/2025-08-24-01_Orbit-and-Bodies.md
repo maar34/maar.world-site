@@ -22,4 +22,8 @@ Una performance que conecta gestos humanos, datos orbitales y sistemas audiovisu
   <p>Tu navegador no soporta PDFs. <a href="/img/pdf/WAC25-Orbits-and-Bodies-Bruna-Gabriel.pdf">Descargar el PDF</a>.</p>
 </object>
 
+<div class="media-frame ratio-169">
+  {%- include extensions/youtube.html id='Tp--LJcp_5o' -%}
+</div>
+
 

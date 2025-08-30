@@ -22,4 +22,7 @@ Orbits and Bodies explores the entanglement of embodied gesture, astronomical da
   <p>Your browser does not support PDFs. <a href="/img/pdf/WAC25-Orbits-and-Bodies-Bruna-Gabriel.pdf">Download the PDF</a>.</p>
 </object>
 
+<div class="media-frame ratio-169">
+  {%- include extensions/youtube.html id='Tp--LJcp_5o' -%}
+</div>
 
