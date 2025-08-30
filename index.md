@@ -41,7 +41,6 @@ header:
         2024_ss-6.jpeg:Improvisation under orbital rules,
         2024_ss-7.jpeg:Hybrid instrument assembly,
         2024_ss-8.jpeg:Real‑time parameter negotiation,
-        2024_ss-9.jpeg:Spatial focus & diffusion test,
         2024_ss-10.jpeg:Multichannel rehearsal fragment,
         2024_ss-11.jpeg:Embodied timing exploration,
         2024_ss-12.jpeg:Closing resonance capture
@@ -116,9 +115,9 @@ header:
         <a href="/lab/en/ip-orchestra" class="button button--outline button--rounded" style="font-size:.8rem;">Open</a>
       </div>
       <div style="display:flex;gap:.75rem;flex-wrap:wrap;justify-content:center;margin-top:1.25rem;">
-        <a href="/lab" class="button button--primary button--rounded" style="background:#ff00de;border:none;">Lab</a>
+        <a href="/lab" class="button button--outline-error button--rounded">Lab</a>
         <a href="/landings" class="button button--outline-error button--rounded">Live</a>
-        <a href="/bookings" class="button button--outline-info button--rounded">Bookings</a>
+        <a href="/bookings" class="button button--outline-error button--rounded">Bookings</a>
       </div>
     </div>
   </div>

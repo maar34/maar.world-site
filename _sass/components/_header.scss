@@ -76,8 +76,11 @@
   & > a {
     display: inline-block;
     font-size: map-get($base, font-size-h4);
+    font-family: 'Orbitron', 'Inter', sans-serif; // Orbitron override
+    font-weight: 800; // use loaded Orbitron weight
+    letter-spacing: .02em;
     @include media-breakpoint-down(md) {
-      font-size: map-get($base, font-size-h4-small);
+      font-size: map-get($base, font-size-h4-sm); // corrected key
     }
   }
 }
