@@ -233,7 +233,7 @@
 @media (min-width:900px){ .rotating-hero.single-line { padding:2.9rem 1rem 1rem; } }
 .rotator--single .rotator-track, .rotator--wip .rotator-track { display:flex; flex-direction:column; will-change:transform; }
 .rotator--single .rot-line, .rotator--wip .rot-line { font-weight:400; letter-spacing:.01em; color:#fff; padding:0; margin:0; opacity:1; transition:opacity .4s ease; text-wrap:balance; }
-.rotator--single .rot-line { font-size:clamp(1.05rem,0.9rem + 0.8vw,1.55rem); line-height:1.45; }
+.rotator--single .rot-line { font-size:calc(1.2rem + 1vw); line-height:1.45; }
 .rotator--wip .rot-line { font-size:1.55rem; line-height:1.3; font-weight:500; letter-spacing:.03em; }
 @media (max-width:640px){ .rotator--wip .rot-line { font-size:1.28rem; } .rotating-hero.single-line { padding:2.6rem 1rem 1rem; } }
 .rotator--single .rot-line.fade-out, .rotator--wip .rot-line.fade-out { opacity:0; }

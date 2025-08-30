@@ -5,11 +5,12 @@ permalink: /lab/en/orbits-and-bodies.html
 cover: https://dl.dropboxusercontent.com/s/9vdaaxsmuzklbp3/1-ent-player-yellow.jpg?raw=1
 tags: EW IP EN performance audiovisual exoplanets
 lang: en
+date: 2025-08-24
 ---
 
 A performance connecting human gestures, orbital data, and real-time audiovisual systems.
 
-**𝐵𝓇𝓊𝓃𝒶 𝒢𝓊𝒶𝓇𝓃𝒾𝑒𝓇𝒾 𝒞𝓇𝑜𝓈𝓈𝑜** – Maar World, Berlin  
+**𝐵𝓇𝓊𝓃𝒶 𝒢𝓊𝒶𝓇𝓃𝒾𝑒𝓇𝒾 𝒞𝓇𝓊𝓈𝓈𝑜** – Maar World, Berlin  
 **Gabriel Vigliensoni** – [vigliensoni.com](https://vigliensoni.com/) – Concordia University, Montréal, QC
 
 ## Introduction
