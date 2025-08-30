@@ -15,10 +15,12 @@ header:
     <div class="rotator rotator--single" aria-live="polite">
       <div class="rotator-viewport">
         <div class="rotator-track">
-          <span class="rot-line">A space for fluid music‑making that moves beyond binaries,</span>
+          <span class="rot-line">A space for fluid music‑making</span>
+          <span class="rot-line">that moves beyond binaries,</span>
           <span class="rot-line">between physical and digital formats,</span>
           <span class="rot-line">a human–machine commonwealth,</span>
-          <span class="rot-line">a blend of innovation and a continuation of tradition.</span>
+          <span class="rot-line">a blend of innovation and</span>
+          <span class="rot-line">a continuation of tradition.</span>
         </div>
       </div>
     </div>
@@ -412,64 +414,17 @@ header:
 
 <!-- ROTATOR STYLES (append / merge) -->
 <style>
-.rotating-hero.single-line {
-  padding: 3.2rem 1rem 1.4rem;
-}
-.rotator--single {
-  max-width: 1040px;
-  margin: 0 auto;
-  text-align: center;
-  position: relative;
-}
-.rotator-viewport {
-  overflow: hidden;
-  position: relative;
-  width: 100%;
-}
-.rotator-track {
-  display: flex;
-  flex-direction: column;
-  will-change: transform;
-}
-.rot-line {
-  font-size: clamp(1.05rem,0.9rem + 0.8vw,1.55rem);
-  line-height: 1.45;
-  font-weight: 400;
-  letter-spacing: .01em;
-  color: #fff;
-  padding: 0;
-  margin: 0;
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity .4s ease;
-  text-wrap: balance;
-}
-
-/* Fade states */
-.rot-line.fade-out {
-  opacity: 0;
-  transition: opacity .4s ease;
-}
-.rot-line.fade-in {
-  opacity: 0;
-  animation: fadeInLine .55s forwards;
-}
-
-@keyframes fadeInLine {
-  0% { opacity: 0; transform: translateY(6px); }
-  60% { opacity: 1; transform: translateY(0); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-.rotator--single:hover .rot-line,
-.rotator--single:focus-within .rot-line {
-  filter: brightness(1.05);
-}
-
-@media (max-width:640px){
-  .rotating-hero.single-line { padding: 2.6rem 1rem 1rem; }
-  .rot-line { font-size: 1.18rem; }
-}
+.rotating-hero.single-line { padding: 3.2rem 1rem 1.4rem; }
+.rotator--single { max-width: 1040px; margin: 0 auto; text-align: center; position: relative; }
+.rotator-viewport { overflow: hidden; position: relative; width: 100%; }
+.rotator-track { display: flex; flex-direction: column; will-change: transform; }
+/* Unified rotator line style (matches bottom rotator) */
+.rotator--single .rot-line { font-size:1.55rem; line-height:1.3; font-weight:500; letter-spacing:.03em; color:#fff; padding:0; margin:0; opacity:1; transition:opacity .4s ease; text-wrap:balance; white-space:normal; }
+@media (max-width:640px){ .rotating-hero.single-line { padding: 2.6rem 1rem 1rem; } .rotator--single .rot-line { font-size:1.28rem; } }
+.rotator--single .rot-line.fade-out { opacity:0; transition:opacity .4s ease; }
+.rotator--single .rot-line.fade-in { opacity:0; animation:fadeInLine .55s forwards; }
+@keyframes fadeInLine { 0% { opacity:0; transform:translateY(6px);} 60% { opacity:1; transform:translateY(0);} 100% { opacity:1; transform:translateY(0);} }
+.rotator--single:hover .rot-line, .rotator--single:focus-within .rot-line { filter:brightness(1.05); }
 </style>
 
 <style>
