@@ -366,3 +366,13 @@ header:
 .hero--wip { padding-top:0 !important; padding-bottom:.6rem; }
 </style>
 
+<style>
+/* Photo swiper adjustments: hide captions + uniform height with side crop */
+.swiper-demo--home .slide-caption { display:none !important; }
+.swiper-demo--home { --home-swiper-h-mobile:320px; --home-swiper-h-desktop:520px; }
+.swiper-demo--home .swiper__wrapper, .swiper-demo--home .swiper__slide { height:var(--home-swiper-h-mobile); }
+@media (min-width:900px){ .swiper-demo--home .swiper__wrapper, .swiper-demo--home .swiper__slide { height:var(--home-swiper-h-desktop); } }
+.swiper-demo--home .swiper__slide { overflow:hidden; }
+.swiper-demo--home .swiper__slide img { height:100%; width:auto; max-width:none; object-fit:cover; object-position:center; }
+</style>
+
