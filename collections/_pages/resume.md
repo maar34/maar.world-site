@@ -15,7 +15,7 @@ article_header:
   height: 50%
   type: overlay
   background_image:
-    src: /img/maar-18.jpg
+    src: /img/maar-earth.jpg
 
 ---
 
