@@ -21,10 +21,14 @@ article_header:
 
 <br>
 
-<a href="https://drive.google.com/file/d/1-z60oqofBOmrz7LrSiA2_jxZWzUJVO-J/view?usp=sharing" rel="resume" target="_blank">DOWNLOAD RESUME </a> <br>
+<a href="/img/pdf/02_Bruna-Resume.pdf" rel="resume" target="_blank">DOWNLOAD RESUME </a> <br>
 
-<iframe src="https://drive.google.com/file/d/1-z60oqofBOmrz7LrSiA2_jxZWzUJVO-J/preview" width="100%" height="1024" allow="autoplay"></iframe>
+<object data="/img/pdf/02_Bruna-Resume.pdf" type="application/pdf" width="100%" height="1024px">
+  <p>Your browser does not support PDFs. <a href="/img/pdf/02_Bruna-Resume.pdf">Download the Resume PDF</a>.</p>
+</object>
 
-<a href="https://drive.google.com/file/d/1-wvj_pjcX6d4l1x_k39zg6UjZjTyzTME/view?usp=sharing" rel="portfolio" target="_blank">DOWNLOAD PORTFOLIO </a> <br>
+<a href="/img/pdf/03_Bruna-Portfolio.pdf" rel="portfolio" target="_blank">DOWNLOAD PORTFOLIO </a> <br>
 
-<iframe src="https://drive.google.com/file/d/1-wvj_pjcX6d4l1x_k39zg6UjZjTyzTME/preview" width="100%" height="640" allow="autoplay"></iframe>
+<object data="/img/pdf/03_Bruna-Portfolio.pdf" type="application/pdf" width="100%" height="640px">
+  <p>Your browser does not support PDFs. <a href="/img/pdf/03_Bruna-Portfolio.pdf">Download the Portfolio PDF</a>.</p>
+</object>
