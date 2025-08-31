@@ -3,7 +3,7 @@ title: Órbitas y Cuerpos
 layout: article
 permalink: /lab/es/orbits-and-bodies.html
 cover: https://dl.dropboxusercontent.com/s/9vdaaxsmuzklbp3/1-ent-player-yellow.jpg?raw=1
-tags: EW IP ES performance audiovisual exoplanetas
+tags: EW orbiter ES performance audiovisual exoplanetas
 lang: es
 ---
 

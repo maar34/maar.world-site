@@ -24,6 +24,12 @@ article_header:
 
 <div class="hero hero--center" style="background-color: #000000;">
   <div class="hero__content">
+  <p>Orbiters — previously called Interplanetary Players</p>  
+</div>
+</div>
+
+<div class="hero hero--center" style="background-color: #000000;">
+  <div class="hero__content">
     <h3>Start your journey</h3>
   </div>
 </div>

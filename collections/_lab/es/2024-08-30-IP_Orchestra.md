@@ -3,14 +3,14 @@ title: "Taller de creación orbital: Orbiters Orchestra (ES)"
 layout: article
 permalink: /lab/es/ip-orchestra
 cover: https://dl.dropboxusercontent.com/s/9vdaaxsmuzklbp3/1-ent-player-yellow.jpg?raw=1
-tags: IP ES
+tags: orbiter ES
 lang: es
 
 ---
 ### 🐚 Tal vez la relación entre seres humanos no sea vertical u horizontal, sea orbital. 🧬
 
 ### Invitación
-Desde la Universidad de las Artes en Guayaquil, estamos emocionados de presentar el <a href="/lab/es/ip-orchestra-design">Orbiters Orchestra</a>, un taller que propone experiencias sensoriales únicas para la co-creación musical. Este evento está diseñado para fusionar disciplinas como las artes sonoras, la música, la producción musical, el teatro, la danza, el cine, la literatura, la pedagogía intercultural, las artes visuales y la programación, en un único y vibrante espacio creativo y transdisciplinario.
+Desde la Universidad de las Artes en Guayaquil, estamos emocionados de presentar <a href="/lab/es/ip-orchestra-design">Orbiters Orchestra</a>, un taller que propone experiencias sensoriales únicas para la co-creación musical. Este evento está diseñado para fusionar disciplinas como las artes sonoras, la música, la producción musical, el teatro, la danza, el cine, la literatura, la pedagogía intercultural, las artes visuales y la programación, en un único y vibrante espacio creativo y transdisciplinario.
 Nos preguntamos: ¿Qué ideas pueden unir a las personas presentes en la sala de conciertos, en la ciudad, en el país, en el continente y en la Tierra? Nuestro taller explora estas conexiones a través del uso de meta-instrumentos musicales, que combinan características de varios instrumentos tradicionales y contemporáneos, en una sola interfaz. Esto permite a los participantes tocar distintos tipos de sonidos desde múltiples dispositivos en red, integrando los cuerpos con tecnologías y nuevos medios de interacción. 
 
 ### Descripción del Taller

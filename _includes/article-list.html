@@ -1,95 +1,83 @@
-{%- comment -%}
-Rewritten, working article list include.
-Supported parameters:
-  articles        (required) collection array
-  group_by='year' optional
-  reverse=true    optional
-  show_date=true  optional
-  show_excerpt=true optional
-  excerpt_truncate=140 optional
-  type='brief' | 'grid' (layout style)
-{%- endcomment -%}
-
 {%- assign _articles = include.articles | default: site.lab -%}
-{%- if include.reverse -%}
-  {%- assign _articles = _articles | reverse -%}
-{%- endif -%}
+{%- if include.reverse -%}{%- assign _articles = _articles | reverse -%}{%- endif -%}
 {%- assign _truncate = include.excerpt_truncate | default: 140 -%}
 {%- assign _group_by_year = include.group_by | default: '' -%}
-
-{%- if _group_by_year == 'year' -%}
-  {%- assign _articles = _articles | sort: 'date' | reverse -%}
-{%- endif -%}
-
+{%- assign _show_tags = include.show_tags | default: true -%}
+{%- if _group_by_year == 'year' -%}{%- assign _articles = _articles | sort: 'date' | reverse -%}{%- endif -%}
+{%- assign _paths_archive = site.paths.archive | default: site.data.variables.default.paths.archive -%}
 <div class="article-list-wrapper type-{{ include.type | default: 'brief' }}">
 {%- if _group_by_year == 'year' -%}
-  {%- assign _current_year = '' -%}
-  {%- for a in _articles -%}
-    {%- if a.date -%}
-      {%- assign _year = a.date | date: "%Y" -%}
-    {%- else -%}
-      {%- assign _year = 'Undated' -%}
-    {%- endif -%}
-
-    {%- if _year != _current_year -%}
-      {%- if _current_year != '' -%}</ul>{%- endif -%}
-      <h2 class="archive-year">{{ _year }}</h2>
-      <ul class="archive-year-list">
-      {%- assign _current_year = _year -%}
-    {%- endif -%}
-
-    {%- assign _tags = a.tags | join: ' ' -%}
-    <li class="archive-item" data-tags="{{ _tags }}">
-      <div class="archive-item__inner">
-        <h3 class="archive-item__title">
-          <a href="{{ a.url | relative_url }}">{{ a.title }}</a>
-        </h3>
-        {%- if include.show_date and a.date -%}
-          <time class="archive-item__date" datetime="{{ a.date | date_to_xmlschema }}">
-            {{ a.date | date: "%Y-%m-%d" }}
-          </time>
-        {%- endif -%}
-        {%- if include.show_excerpt -%}
-          <p class="archive-item__excerpt">
-            {{ a.excerpt | strip_html | truncate: _truncate }}
-          </p>
-        {%- endif -%}
-        {%- if include.show_cover and a.cover -%}
-        <div class="archive-item__cover">
-          <img src="{{ a.cover | relative_url }}" alt="{{ a.title }}">
+  <ul class="archive-year-list grouped">
+    {%- assign _current_year = '' -%}
+    {%- for a in _articles -%}
+      {%- assign _year = a.date | date: '%Y' | default: 'Undated' -%}
+      {%- if _year != _current_year -%}
+        <li class="archive-year-sep"><h2 class="archive-year">{{ _year }}</h2></li>
+        {%- assign _current_year = _year -%}
+      {%- endif -%}
+      {%- assign _tags = a.tags | join: ' ' -%}
+      <li class="archive-item" data-tags="{{ _tags }}">
+        <div class="archive-item__inner">
+          <h3 class="archive-item__title"><a href="{{ a.url | relative_url }}">{{ a.title }}</a></h3>
+          {%- if include.show_date and a.date -%}<time class="archive-item__date" datetime="{{ a.date | date_to_xmlschema }}"><span class="date-pill">{{ a.date | date: '%b %d, %Y' }}</span></time>{%- endif -%}
+          {%- if include.show_excerpt -%}<p class="archive-item__excerpt">{{ a.excerpt | strip_html | truncate: _truncate }}</p>{%- endif -%}
+          {%- if include.show_cover and a.cover -%}<div class="archive-item__cover"><img src="{{ a.cover | relative_url }}" alt="{{ a.title }}"></div>{%- endif -%}
+          {%- if _show_tags and a.tags and a.tags != empty -%}
+            <ul class="archive-item__tags menu" style="display:flex;flex-wrap:wrap;gap:.4rem;margin:.5rem 0 0;">
+              {%- for t in a.tags -%}
+                <li><a class="button button--secondary button--pill button--sm" href="{{ _paths_archive }}?tag={{ t | url_encode }}">{{ t }}</a></li>
+              {%- endfor -%}
+            </ul>
+          {%- endif -%}
         </div>
-        {%- endif -%}
-        {%- if a.tags and a.tags.size > 0 -%}
-          <p class="archive-item__tags">
-            {%- for t in a.tags -%}
-              <span class="tag">{{ t }}</span>
-            {%- endfor -%}
-          </p>
-        {%- endif -%}
-      </div>
-    </li>
-  {%- endfor -%}
-  {%- if _articles.size > 0 -%}</ul>{%- endif -%}
+      </li>
+    {%- endfor -%}
+  </ul>
 {%- else -%}
   <ul class="archive-flat-list">
     {%- for a in _articles -%}
       {%- assign _tags = a.tags | join: ' ' -%}
       <li class="archive-item" data-tags="{{ _tags }}">
-        <h3 class="archive-item__title">
-          <a href="{{ a.url | relative_url }}">{{ a.title }}</a>
-        </h3>
-        {%- if include.show_date and a.date -%}
-          <time class="archive-item__date" datetime="{{ a.date | date_to_xmlschema }}">
-            {{ a.date | date: "%Y-%m-%d" }}
-          </time>
-        {%- endif -%}
-        {%- if include.show_excerpt -%}
-          <p class="archive-item__excerpt">
-            {{ a.excerpt | strip_html | truncate: _truncate }}
-          </p>
+        <h3 class="archive-item__title"><a href="{{ a.url | relative_url }}">{{ a.title }}</a></h3>
+        {%- if include.show_date and a.date -%}<time class="archive-item__date" datetime="{{ a.date | date_to_xmlschema }}"><span class="date-pill">{{ a.date | date: '%b %d, %Y' }}</span></time>{%- endif -%}
+        {%- if include.show_excerpt -%}<p class="archive-item__excerpt">{{ a.excerpt | strip_html | truncate: _truncate }}</p>{%- endif -%}
+        {%- if _show_tags and a.tags and a.tags != empty -%}
+          <ul class="archive-item__tags menu" style="display:flex;flex-wrap:wrap;gap:.4rem;margin:.5rem 0 0;">
+            {%- for t in a.tags -%}
+              <li><a class="button button--secondary button--pill button--sm" href="{{ _paths_archive }}?tag={{ t | url_encode }}">{{ t }}</a></li>
+            {%- endfor -%}
+          </ul>
         {%- endif -%}
       </li>
     {%- endfor -%}
   </ul>
 {%- endif -%}
 </div>
+<style>
+/* Subtle card styling for article list */
+.article-list-wrapper .archive-item { list-style:none; margin:0 0 1.1rem; }
+.article-list-wrapper .archive-year-sep { list-style:none; margin:1.6rem 0 .6rem; }
+.article-list-wrapper .archive-item__inner {
+  position:relative;
+  padding:1rem 1rem 0.9rem;
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:16px;
+  background:linear-gradient(145deg,rgba(255,255,255,0.03),rgba(255,255,255,0.015));
+  backdrop-filter:blur(4px);
+  transition:background .35s ease, border-color .35s ease, transform .35s ease, box-shadow .35s ease;
+}
+.article-list-wrapper .archive-item__inner:hover {
+  border-color:rgba(255,0,222,0.35);
+  background:linear-gradient(145deg,rgba(255,0,222,0.06),rgba(255,255,255,0.035));
+  box-shadow:0 4px 18px -8px rgba(0,0,0,.65), 0 0 0 1px rgba(255,0,222,.15);
+  transform:translateY(-2px);
+}
+.article-list-wrapper .archive-item__title { margin:.1rem 0 .4rem; font-size:1.02rem; }
+.article-list-wrapper .archive-item__date { font-size:.65rem; letter-spacing:.05em; opacity:.72; display:block; margin:-.25rem 0 .35rem; }
+.article-list-wrapper .archive-item__excerpt { font-size:.72rem; line-height:1.45; opacity:.85; margin:.15rem 0 .6rem; }
+.article-list-wrapper .archive-item__tags .button { font-size:.55rem; letter-spacing:.05em; }
+@media (min-width:760px){
+  .article-list-wrapper .archive-item__inner { padding:1.05rem 1.15rem 1rem; }
+  .article-list-wrapper .archive-item__excerpt { font-size:.75rem; }
+}
+</style>

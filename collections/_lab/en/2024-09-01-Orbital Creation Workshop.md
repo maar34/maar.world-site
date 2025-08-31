@@ -3,7 +3,7 @@ title: "Orbital Creation Workshop"
 layout: article
 permalink: /lab/en/ip-orchestra-design
 cover: https://dl.dropboxusercontent.com/s/9vdaaxsmuzklbp3/1-ent-player-yellow.jpg?raw=1
-tags: IP EN
+tags: orbiter EN
 lang: en
 
 ---

@@ -4,7 +4,7 @@ layout: article
 show_title: false
 permalink: /lab/es/ip-orchestra-subscription
 cover: https://dl.dropboxusercontent.com/s/9vdaaxsmuzklbp3/1-ent-player-yellow.jpg?raw=1
-tags: IP ES
+tags: orbiter ES
 lang: es
 
 ---
