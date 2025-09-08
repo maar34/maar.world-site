@@ -53,7 +53,11 @@ ENT Worlds
 - 20 / 04 / 2022  - Piso 24 -  With Emma Lohan - 📍 Palma de Mallorca, Spain
 - 26 / 02 / 2022  - Pulpismo 04 -  Espacio Pulpo - With Hamid, Halbert, Todd📍 Palma de Mallorca Spain
 
-<a href="https://youtu.be/GYhV2qAPZ6w" rel="Trappist Live" target="_blank">TRAPPIST - 01 LIVE AV Head Brothers</a> 
+<a href="https://youtu.be/GYhV2qAPZ6w" rel="Trappist Live" target="_blank">TRAPPIST - 01 LIVE AV Head Brothers</a>
+<div class="hero hero--center hero--dark" style="margin:.75rem 0 1rem;">
+  {%- include extensions/youtube.html id='GYhV2qAPZ6w' -%}
+  <p style="text-align:center;font-size:.85rem;opacity:.85;margin:.35rem 0 0;">TRAPPIST - 01 live AV (Head Brothers)</p>
+</div>
 
 - 18 / 12 / 2019 El Hangar - 📍 Buenos Aires Argentina
 - 01 / 12 / 2019 Ábalos - 📍 Montevideo Uruguay
@@ -71,7 +75,17 @@ ENT Worlds
   - 8/12/17 📍 Montevideo, Uruguay
   - 21/7/18 📍 Villa serrana SERRANA, MINAS Uruguay
 
-<a href="https://youtu.be/VfqNGsa1rz" rel="Exoplanetas Hybrid" target="_blank">🙏🏽🙏🏽🙏🏽</a>
+
+<div class="hero hero--center hero--dark" style="margin:.75rem 0 0;">
+  {%- include extensions/vimeo.html id='252728417' -%}
+  <p style="text-align:center;font-size:.85rem;opacity:.85;margin:.35rem 0 0;">Exoplanetas — Hybrid set (excerpt, Vimeo)</p>
+</div>
+
+<a href="https://youtu.be/riEIWUQ-OWQ" rel="Exoplanetas Hybrid" target="_blank">🙏🏼</a>
+<div class="hero hero--center hero--dark" style="margin:.5rem 0 1rem;">
+  {%- include extensions/youtube.html id='riEIWUQ-OWQ' -%}
+  <p style="text-align:center;font-size:.85rem;opacity:.85;margin:.35rem 0 0;">Exoplanetas — additional excerpt</p>
+</div>
 
 - <a href="http://headbrothers.com/idm2018/" rel="2018" target="_blank">Immersive experiences</a> for the closing FING Ingeniería Demuestra. Head Brothers + MEDIALAB  📍 Montevideo, Uruguay
 
@@ -83,6 +97,11 @@ ENT Worlds
   <br>
 - <a href="https://vimeo.com/235986660" rel="IBM Watson" target="_blank">Watson Says.</a> Head Brothers, IBM, Juanita Fernandez, Sebastian Pereira. 
   - 05/08/2017 Music production with Watson Supercomputer. 📍 Montevideo, Uruguay
+
+<div class="hero hero--center hero--dark" style="margin:.75rem 0 1rem;">
+  {%- include extensions/vimeo.html id='235986660' -%}
+  <p style="text-align:center;font-size:.85rem;opacity:.85;margin:.35rem 0 0;">Watson Says. (Vimeo)</p>
+</div>
 
   <br>
 - <a href="https://vimeo.com/135519258" rel="Luminiscencia" target="_blank">Luminiscencia, </a> Matias Romero Balado, Sebastián Segarra, Head Brothers. 
