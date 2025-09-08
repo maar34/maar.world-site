@@ -9,6 +9,8 @@
     background: #000;
     color: #fff;
     z-index: 9999; /* Set a higher value for the z-index */
+    border-top: 1px solid rgba(255, 255, 255, 0.25); /* subtle white top line */
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.6); /* elevate above content */
   }
 
   #cookie-notice a {
@@ -45,12 +47,46 @@
   display: inline;                           
   line-height: normal;        
 }
+
+  #cookie-notice .actions { margin-top: .5rem; }
+  #cookie-notice .button { margin: 0 .25rem; }
+  #cookie-pref-panel { display: none; text-align: left; margin-top: .75rem; font-size: .95em; }
+  #cookie-pref-panel label { display: block; margin: .35rem 0; }
+  #cookie-pref-panel .save-row { margin-top: .5rem; text-align: right; }
+  #cookie-notice small.helper { display:block; opacity:.85; margin-top:.25rem; }
 </style>
 
-<div id="cookie-notice">
-  <span>Please, find out<a href="https://maar.world/privacy" class="btn btn-primary btn-sm" id="flat-link">more info</a> about how we use cookies </span><br>
-  <a id="cookie-notice-accept" class="btn btn-primary btn-sm"> OK 💌</a>
+<div id="cookie-notice" role="dialog" aria-live="polite">
+  <span>
+    Please, find out <a href="https://collect.maar.world/privacy" id="flat-link">more info</a> about how we use cookies.
+  </span><br>
+  <div class="actions" role="group" aria-label="Cookie actions">
+    <a id="cookie-accept-all" class="button button--outline-primary button--sm" aria-label="Accept all cookies">OK 💌 Accept all</a>
+    <a id="cookie-reject" class="button button--outline-primary button--sm" aria-label="Reject non-essential cookies">Only necessary 🚫</a>
+    <a id="cookie-preferences" class="button button--outline-primary button--sm"  aria-label="Open cookie preferences">Preferences ⚙️</a>
+  </div>
+  <div id="cookie-pref-panel" aria-live="polite">
+    <label>
+      <input type="checkbox" id="consent-analytics"> Analytics cookies (Google Analytics with IP anonymization)
+    </label>
+    <label>
+      <input type="checkbox" id="consent-media"> Media cookies (YouTube embeds via youtube-nocookie.com)
+    </label>
+    <div class="save-row">
+      <a id="cookie-save-preferences" class="button button--outline-primary button--sm" aria-label="Save cookie preferences">Save preferences</a>
+    </div>
+  </div>
 </div>
+
+<!-- GA config exposed as HTML data attributes to avoid Liquid inside JS -->
+<div id="mw-ga-config" data-tracking-id="{{ site.analytics.google.tracking_id | escape }}" data-anonymize="{% if site.analytics.google.anonymize_ip %}true{% else %}false{% endif %}" style="display:none!important"></div>
+
+<!--
+  Media consent helper:
+  Add YouTube iframes with a placeholder and set data-yt-src to the real URL (prefer youtube-nocookie.com).
+  Example:
+  <iframe width="560" height="315" data-yt-src="https://www.youtube-nocookie.com/embed/VIDEO_ID" title="YouTube video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+-->
 
 <script>
   function createCookie(name, value, days) {
@@ -74,18 +110,94 @@
     return null;
   }
 
-  function eraseCookie(name) {
-    createCookie(name, "", -1);
+  function eraseCookie(name) { createCookie(name, "", -1); }
+
+  // Consent helpers (stored individually to keep it simple & readable in server logs)
+  var CONSENT_DAYS = 180; // ~6 months
+  function getConsent() {
+    var a = readCookie('consent_analytics');
+    var m = readCookie('consent_media');
+    if (a === null && m === null) return null; // no decision yet
+    return {
+      analytics: a === 'true',
+      media: m === 'true'
+    };
+  }
+  function setConsent(opts) {
+    var analytics = !!opts.analytics;
+    var media = !!opts.media;
+    createCookie('consent_analytics', String(analytics), CONSENT_DAYS);
+    createCookie('consent_media', String(media), CONSENT_DAYS);
+    createCookie('cookie-notice-dismissed', 'true', CONSENT_DAYS);
+    applyConsent({ analytics: analytics, media: media });
+    try { window.dispatchEvent(new CustomEvent('mw-consent-updated', { detail: { analytics: analytics, media: media } })); } catch(e) {}
   }
 
-  if (readCookie('cookie-notice-dismissed') == 'true') {
-    // Add your custom code here
-  } else {
-    document.getElementById('cookie-notice').style.display = 'block';
+  function loadGoogleAnalytics() {
+    var cfg = document.getElementById('mw-ga-config');
+    var trackingId = cfg ? cfg.getAttribute('data-tracking-id') : null;
+    var anonymize = cfg ? (cfg.getAttribute('data-anonymize') === 'true') : false;
+    function dispatchConsentEvent() { try { window.dispatchEvent(new Event('mw-cookies-accepted')); } catch (e) {} }
+    if (!trackingId) { dispatchConsentEvent(); return; }
+    if (window.gtag) { dispatchConsentEvent(); return; }
+    var script = document.createElement('script');
+    script.async = true;
+    script.src = 'https://www.googletagmanager.com/gtag/js?id=' + trackingId;
+    document.head.appendChild(script);
+    script.onload = function() {
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);} 
+      window.gtag = gtag;
+      gtag('js', new Date());
+      var config = {};
+      if (anonymize) { config['anonymize_ip'] = true; }
+      gtag('config', trackingId, config);
+      dispatchConsentEvent();
+    };
   }
 
-  document.getElementById('cookie-notice-accept').addEventListener("click", function () {
-    createCookie('cookie-notice-dismissed', 'true', 31);
-    document.getElementById('cookie-notice').style.display = 'none';
-  });
+  function enableMediaEmbeds() {
+    var iframes = document.querySelectorAll('iframe[data-yt-src]');
+    iframes.forEach(function(iframe) {
+      if (!iframe.getAttribute('src')) {
+        iframe.setAttribute('src', iframe.getAttribute('data-yt-src'));
+      }
+    });
+    try { window.dispatchEvent(new Event('mw-media-enabled')); } catch(e) {}
+  }
+
+  function applyConsent(consent) {
+    if (consent.analytics) { loadGoogleAnalytics(); }
+    if (consent.media) { enableMediaEmbeds(); }
+  }
+
+  // UI wiring
+  var banner = document.getElementById('cookie-notice');
+  var btnAcceptAll = document.getElementById('cookie-accept-all');
+  var btnReject = document.getElementById('cookie-reject');
+  var btnPrefs = document.getElementById('cookie-preferences');
+  var btnSavePrefs = document.getElementById('cookie-save-preferences');
+  var panel = document.getElementById('cookie-pref-panel');
+  var chkAnalytics = document.getElementById('consent-analytics');
+  var chkMedia = document.getElementById('consent-media');
+
+  function showBanner() { banner.style.display = 'block'; }
+  function hideBanner() { banner.style.display = 'none'; }
+
+  // Initial state
+  (function initConsent() {
+    var c = getConsent();
+    if (c) {
+      applyConsent(c);
+      hideBanner();
+    } else {
+      showBanner();
+    }
+  })();
+
+  // Button handlers
+  if (btnAcceptAll) btnAcceptAll.addEventListener('click', function(){ setConsent({ analytics: true, media: true }); hideBanner(); });
+  if (btnReject) btnReject.addEventListener('click', function(){ setConsent({ analytics: false, media: false }); hideBanner(); });
+  if (btnPrefs) btnPrefs.addEventListener('click', function(){ panel.style.display = (panel.style.display === 'block') ? 'none' : 'block'; });
+  if (btnSavePrefs) btnSavePrefs.addEventListener('click', function(){ setConsent({ analytics: chkAnalytics.checked, media: chkMedia.checked }); hideBanner(); });
 </script>

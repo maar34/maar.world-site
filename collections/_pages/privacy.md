@@ -12,40 +12,53 @@ header:
    theme: dark
 ---
 
-### Privacy and Cookies Policy
+# Privacy and Cookies Policy  
 
-Effective Date: 05-02-2024
+**Effective Date:** 08-09-2025  
 
-At Maar World, we value your privacy and strive to ensure the security and confidentiality of your personal information. This Privacy and Cookies Policy explains how we collect, use, and disclose information when you visit our website and interact with our services.
+At Maar World, we respect your privacy and comply with the General Data Protection Regulation (GDPR). This policy explains how we collect and use personal data when you visit our website.  
 
-### Information We Collect
+## 1. Who We Are  
+Maar World is the data controller for this website.  
+Contact: **hello@maar.world**  
 
-When you visit our website, we may collect certain information automatically, including your IP address, browser type, operating system, referring URLs, and the pages you view. This information is collected through cookies and similar tracking technologies. By using our website, you consent to the use of cookies as explained in this Privacy and Cookies Policy.
+## 2. What Data We Collect  
+- **Technical data:** anonymized IP address, browser type, operating system, pages visited (via Google Analytics).  
+- **Media delivery:** Dropbox may collect technical information to deliver files.  
+- **Embedded content:** When you watch a YouTube video on our site, YouTube/Google may collect usage data.  
+- **Purchases:** All sales are handled externally on **Bandcamp**. We do not process payments or store your payment details here.  
 
-Use of Cookies
-Cookies are small data files that are placed on your computer or mobile device when you visit a website. We use cookies to:
+## 3. Legal Basis for Processing  
+We process your data based on:  
+- **Consent** (for analytics and non-essential cookies).  
+- **Legitimate interest** (to keep our website functional and secure).  
 
-* Ensure the functionality of our website
-* Improve your browsing experience
-* Analyze trends, track user movements, and gather demographic information
-* Customize and personalize your interactions with our website
-* Serve relevant advertisements
+## 4. Cookies  
+We use cookies to:  
+- Ensure the site works properly  
+- Improve your browsing experience  
+- Collect anonymous analytics (Google Analytics)  
 
-We use Google Analytics, a web analytics service provided by Google, Inc. ("Google"), to analyze the usage of our website. Google Analytics uses cookies to collect anonymous information, which is then used to evaluate visitors’ use of the website, compile reports, and provide us with other statistical information.
+When you first visit our site, you can choose which cookies to accept. You may withdraw consent at any time by changing your browser settings.  
 
-We also use Dropbox, a file hosting service, to serve media files on our website. Dropbox may collect certain information to provide this service. Please refer to Dropbox's privacy policy for more information on how they handle your data.
-Additionally, we embed YouTube videos on our website, which may set cookies on your device. YouTube is owned by Google, and its cookies are used to track video views, manage session data, and gather other statistics. Please refer to YouTube's privacy policy to understand how they handle your data.
+## 5. Data Retention  
+- Google Analytics data is stored for up to **14 months**.  
+- Technical logs may be stored for security purposes for a limited time.  
+- We do not keep personal data longer than necessary.  
 
-Our website may contain links to third-party websites or services that are not operated by us. These third-party websites or services have their own privacy policies, which we encourage you to review. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services.
-Data Security
+## 6. Data Transfers Outside the EU  
+Google and Dropbox may process data outside the EU (e.g. in the United States). In such cases, safeguards like **Standard Contractual Clauses (SCCs)** are applied to protect your data.  
 
-We take reasonable measures to protect the security and integrity of your personal information. However, please be aware that no method of transmission over the internet or electronic storage is completely secure, and we cannot guarantee absolute security.
+## 7. Your Rights  
+Under GDPR, you have the right to:  
+- Access your data  
+- Correct your data  
+- Request deletion (“right to be forgotten”)  
+- Restrict or object to processing  
+- Withdraw consent (e.g. for analytics cookies)  
+- Lodge a complaint with a data protection authority  
 
-### Updates to this Policy
+To exercise your rights, contact us at **hello@maar.world**.  
 
-We may update this Privacy and Cookies Policy from time to time. We will notify you of any changes by posting the updated policy on our website. Your continued use of our website after any modifications will constitute your acknowledgment and acceptance of the updated policy.
-
-### Contact Us
-
-If you have any questions or concerns about this Privacy and Cookies Policy, please contact us at hello[at]maar.world
-By using our website, you consent to the terms of this Privacy and Cookies Policy.
+## 8. Updates  
+We may update this policy occasionally. Changes will be posted here with a new effective date.  

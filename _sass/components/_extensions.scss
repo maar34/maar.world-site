@@ -20,6 +20,34 @@
   padding-top: percentage(315 / 560);
 }
 
+// Disable the legacy padding for YouTube’s consented wrapper
+.extensions--video[data-youtube-wrapper] {
+  padding-top: 0;
+  min-height: 0;
+}
+
+// Native aspect-ratio wrapper for embeds
+.yt-ratio {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+.yt-ratio > iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// Fallback for browsers without aspect-ratio support
+@supports not (aspect-ratio: 16/9) {
+  .yt-ratio {
+    height: 0;
+    padding-top: 56.25%;
+  }
+}
+
 .extensions--slide {
   padding-top: percentage(487 / 599);
 }

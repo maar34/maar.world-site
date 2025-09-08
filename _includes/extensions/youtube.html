@@ -1,4 +1,65 @@
-<div class="extensions extensions--video">
-  <iframe src="https://www.youtube.com/embed/{{ include.id }}?rel=0&showinfo=0"
-    frameborder="0" scrolling="no" allowfullscreen></iframe>
-</div>
+<div class="extensions extensions--video" data-youtube-wrapper data-video-id="{{ include.id }}"></div>
+<script>
+(function(){
+  var wrapper = document.currentScript.previousElementSibling;
+  if (!wrapper || !wrapper.matches('[data-youtube-wrapper]')) return;
+  var videoId = wrapper.getAttribute('data-video-id');
+
+  function hasConsent(){
+    return document.cookie.split(';').some(function(c){ return c.trim().indexOf('cookie-notice-dismissed=true') === 0; });
+  }
+
+  function openBanner(){
+    var notice = document.getElementById('cookie-notice');
+    if (!notice) return;
+    notice.style.display = 'block';
+    try { notice.scrollIntoView({ behavior: 'smooth', block: 'end' }); } catch(e) {}
+    var prev = notice.style.outline;
+    notice.style.outline = '2px solid #fff';
+    setTimeout(function(){ notice.style.outline = prev; }, 1500);
+  }
+
+  function acceptAndPlay(){
+    var d = new Date();
+    d.setTime(d.getTime() + (31*24*60*60*1000));
+    document.cookie = 'cookie-notice-dismissed=true; expires=' + d.toUTCString() + '; path=/';
+    var notice = document.getElementById('cookie-notice');
+    if (notice) notice.style.display = 'none';
+    try { window.dispatchEvent(new Event('mw-cookies-accepted')); } catch (e) {}
+    renderVideo();
+  }
+
+  function renderCompact(){
+    wrapper.innerHTML = '<div class="yt-compact" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.75rem;padding:1rem;border:1px solid rgba(255,255,255,.15);border-radius:8px;background:#111;color:#fff;text-align:center;min-height:120px;">' +
+      '<span style="opacity:.9">This video is hosted on YouTube and may set cookies.</span>' +
+      '<div style="display:flex;gap:.5rem;flex-wrap:wrap;justify-content:center;">' +
+      '<a class="button button--outline-primary button--sm" id="yt-accept-and-play" style="cursor:pointer;">Accept cookies and play</a>' +
+      '<a class="button button--outline-primary button--sm" id="yt-open-cookie-banner" style="cursor:pointer;">Open cookie banner</a>' +
+      '</div>' +
+      '</div>';
+    var acceptBtn = wrapper.querySelector('#yt-accept-and-play');
+    if (acceptBtn) acceptBtn.addEventListener('click', acceptAndPlay);
+    var bannerBtn = wrapper.querySelector('#yt-open-cookie-banner');
+    if (bannerBtn) bannerBtn.addEventListener('click', openBanner);
+  }
+
+  function renderVideo(){
+    wrapper.innerHTML = '<div class="yt-ratio">' +
+      '<iframe src="https://www.youtube.com/embed/' + encodeURIComponent(videoId) + '?rel=0&showinfo=0" frameborder="0" scrolling="no" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"></iframe>' +
+      '</div>';
+    var box = wrapper.querySelector('.yt-ratio');
+    if (!(window.CSS && CSS.supports && CSS.supports('aspect-ratio: 16/9'))) {
+      var setHeight = function(){ box.style.height = (box.clientWidth * 9 / 16) + 'px'; };
+      setHeight();
+      window.addEventListener('resize', setHeight);
+    }
+  }
+
+  if (hasConsent()) {
+    renderVideo();
+  } else {
+    renderCompact();
+    window.addEventListener('mw-cookies-accepted', function(){ renderVideo(); }, { once: true });
+  }
+})();
+</script>
