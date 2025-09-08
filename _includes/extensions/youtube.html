@@ -6,7 +6,10 @@
   var videoId = wrapper.getAttribute('data-video-id');
 
   function hasConsent(){
-    return document.cookie.split(';').some(function(c){ return c.trim().indexOf('cookie-notice-dismissed=true') === 0; });
+    var cookies = document.cookie.split(';').map(function(c){ return c.trim(); });
+    var a = cookies.some(function(c){ return c.indexOf('consent_analytics=true') === 0; });
+    var m = cookies.some(function(c){ return c.indexOf('consent_media=true') === 0; });
+    return a && m; // require full consent to show video
   }
 
   function openBanner(){
@@ -19,13 +22,34 @@
     setTimeout(function(){ notice.style.outline = prev; }, 1500);
   }
 
+  function setCookie(name, value, days){
+    var parts = [name + '=' + value, 'path=/'];
+    if (days) {
+      var d = new Date();
+      d.setTime(d.getTime() + (days*24*60*60*1000));
+      parts.push('expires=' + d.toUTCString());
+    }
+    var host = location.hostname;
+    if (host === 'maar.world' || host.endsWith('.maar.world')) parts.push('domain=.maar.world');
+    parts.push('SameSite=Lax');
+    if (location.protocol === 'https:') parts.push('Secure');
+    document.cookie = parts.join('; ');
+  }
+
   function acceptAndPlay(){
-    var d = new Date();
-    d.setTime(d.getTime() + (31*24*60*60*1000));
-    document.cookie = 'cookie-notice-dismissed=true; expires=' + d.toUTCString() + '; path=/';
+    var days = 180;
+    if (typeof window.setConsent === 'function') {
+      // Use the banner’s canonical setter (loads GA, dispatches events, hides banner)
+      window.setConsent({ analytics: true, media: true });
+    } else {
+      // Fallback: set cookies directly (still cross-subdomain)
+      setCookie('consent_analytics', 'true', days);
+      setCookie('consent_media', 'true', days);
+      setCookie('cookie-notice-dismissed', 'true', days);
+      try { window.dispatchEvent(new CustomEvent('mw-consent-updated', { detail: { analytics: true, media: true } })); } catch(e) {}
+    }
     var notice = document.getElementById('cookie-notice');
     if (notice) notice.style.display = 'none';
-    try { window.dispatchEvent(new Event('mw-cookies-accepted')); } catch (e) {}
     renderVideo();
   }
 
@@ -59,7 +83,8 @@
     renderVideo();
   } else {
     renderCompact();
-    window.addEventListener('mw-cookies-accepted', function(){ renderVideo(); }, { once: true });
+    window.addEventListener('mw-cookies-accepted', function(){ if (hasConsent()) renderVideo(); }, { once: true });
+    window.addEventListener('mw-consent-updated', function(e){ try { if (e && e.detail && e.detail.analytics && e.detail.media) renderVideo(); } catch(_) {} });
   }
 })();
 </script>
