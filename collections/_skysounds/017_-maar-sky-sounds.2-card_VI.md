@@ -3,6 +3,9 @@ layout: card
 permalink: /ZHQ9392
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919f23fe01d8a7df9d105c7
+track_v2_slug: Skysounds-2-VI
 
 cover: https://www.dropbox.com/s/ym2p4l59dx9zg72/Thumb_SkySounds_2_6.jpg?raw=1
 suit_title: SkySounds.2

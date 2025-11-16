@@ -3,6 +3,9 @@ layout: card
 permalink: /DJX9483
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919aa50a1def2d77f51bcb5
+track_v2_slug: Skysounds-1-II
 
 cover: https://www.dropbox.com/s/sv4sn8neh5elkap/Thumb_SkySounds_1_2.jpg?raw=1
 suit_title: SkySounds.1

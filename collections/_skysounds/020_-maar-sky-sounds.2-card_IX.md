@@ -3,6 +3,9 @@ layout: card
 permalink: /SIX7919
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919d906e01d8a7df9d0f626
+track_v2_slug: Skysounds-2-IX
 
 cover: https://www.dropbox.com/s/zgcmacg5wkjhshy/Thumb_SkySounds_2_9.jpg?raw=1
 suit_title: SkySounds.2

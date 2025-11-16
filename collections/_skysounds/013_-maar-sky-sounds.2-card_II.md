@@ -3,6 +3,9 @@ layout: card
 permalink: /ROH1693
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919d8f0e01d8a7df9d0f58f
+track_v2_slug: Skysounds-2-II
 
 cover: https://www.dropbox.com/s/uq1s17o15wbvotu/Thumb_SkySounds_2_2.jpg?raw=1
 suit_title: SkySounds.2

@@ -3,6 +3,9 @@ layout: card
 permalink: /TOP2071
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919cfd5e01d8a7df9d0f150
+track_v2_slug: Skysounds-1-VII
 
 cover: https://www.dropbox.com/s/namm02686xxyvck/Thumb_SkySounds_1_7.jpg?raw=1
 suit_title: SkySounds.1

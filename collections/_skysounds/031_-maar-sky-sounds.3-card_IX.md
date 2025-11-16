@@ -3,6 +3,9 @@ layout: card
 permalink: /XEW6454
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919dd81e01d8a7df9d0fa2e
+track_v2_slug: Skysounds-3-IX
 
 cover: https://www.dropbox.com/s/vej72jmuk7rhr0x/Thumb_SkySounds_3_9.jpg?raw=1
 suit_title: SkySounds.3

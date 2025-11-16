@@ -3,6 +3,9 @@ layout: card
 permalink: /CXX8705
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919dd7ce01d8a7df9d0f9ea
+track_v2_slug: Skysounds-3-V
 
 cover: https://www.dropbox.com/s/1k2drqfriu6w17d/Thumb_SkySounds_3_5.jpg?raw=1
 suit_title: SkySounds.3

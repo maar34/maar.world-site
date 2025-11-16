@@ -3,6 +3,9 @@ layout: card
 permalink: /BWN1651
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919dd83e01d8a7df9d0fa3f
+track_v2_slug: Skysounds-3-X
 
 cover: https://www.dropbox.com/s/xl0aqjgt8k6cn09/Thumb_SkySounds_3_10.jpg?raw=1
 suit_title: SkySounds.3

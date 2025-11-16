@@ -3,6 +3,9 @@ layout: card
 permalink: /BQA976
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919dd7fe01d8a7df9d0fa0c
+track_v2_slug: Skysounds-3-VII
 
 cover: https://www.dropbox.com/s/itvsgudovdxbtxr/Thumb_SkySounds_3_7.jpg?raw=1
 suit_title: SkySounds.3

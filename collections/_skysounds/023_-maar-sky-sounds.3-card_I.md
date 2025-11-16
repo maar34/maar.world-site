@@ -3,6 +3,9 @@ layout: card
 permalink: /VHQ3300
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919dd6ee01d8a7df9d0f9a8
+track_v2_slug: Skysounds-3-I
 
 cover: https://www.dropbox.com/s/6hpfq6gm8mr2xsj/Thumb_SkySounds_3_1.jpg?raw=1
 suit_title: SkySounds.3

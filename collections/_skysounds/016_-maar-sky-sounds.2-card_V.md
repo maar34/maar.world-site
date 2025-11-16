@@ -3,6 +3,9 @@ layout: card
 permalink: /KXQ7964
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919d8fee01d8a7df9d0f5c0
+track_v2_slug: Skysounds-2-V
 
 cover: https://www.dropbox.com/s/ws27fi4uj923gjv/Thumb_SkySounds_2_5.jpg?raw=1
 suit_title: SkySounds.2

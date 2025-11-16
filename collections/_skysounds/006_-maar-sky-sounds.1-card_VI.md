@@ -3,6 +3,9 @@ layout: card
 permalink: /CRZ5922
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919cfd1e01d8a7df9d0f13e
+track_v2_slug: Skysounds-1-VI
 
 cover: https://www.dropbox.com/s/a33ban5469w2ro3/Thumb_SkySounds_1_6.jpg?raw=1
 suit_title: SkySounds.1

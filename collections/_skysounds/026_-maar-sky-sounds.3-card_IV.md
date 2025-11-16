@@ -3,6 +3,9 @@ layout: card
 permalink: /QUP1235
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919dd7be01d8a7df9d0f9d9
+track_v2_slug: Skysounds-3-IV
 
 cover: https://www.dropbox.com/s/8th66j4thv78lir/Thumb_SkySounds_3_4.jpg?raw=1
 suit_title: SkySounds.3

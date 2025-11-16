@@ -3,6 +3,9 @@ layout: card
 permalink: /YAC2340
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919dd80e01d8a7df9d0fa1d
+track_v2_slug: Skysounds-3-VIII
 
 cover: https://www.dropbox.com/s/wk2lftpk35xamtp/Thumb_SkySounds_3_8.jpg?raw=1
 suit_title: SkySounds.3

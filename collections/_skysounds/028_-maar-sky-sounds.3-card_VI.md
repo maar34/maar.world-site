@@ -3,6 +3,9 @@ layout: card
 permalink: /IBM5970
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919dd7ee01d8a7df9d0f9fb
+track_v2_slug: Skysounds-3-VI
 
 cover: https://www.dropbox.com/s/ev3uywuu583z3t4/Thumb_SkySounds_3_6.jpg?raw=1
 suit_title: SkySounds.3

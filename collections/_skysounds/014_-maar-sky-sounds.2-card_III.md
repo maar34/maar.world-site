@@ -3,6 +3,9 @@ layout: card
 permalink: /BZD8282
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919d8fce01d8a7df9d0f59e
+track_v2_slug: Skysounds-2-III
 
 cover: https://www.dropbox.com/s/fua45ghr5re8cu7/Thumb_SkySounds_2_3.jpg?raw=1
 suit_title: SkySounds.2

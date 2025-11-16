@@ -3,6 +3,9 @@ layout: card
 permalink: /ROK6739
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919d900e01d8a7df9d0f5d1
+track_v2_slug: Skysounds-2-VII
 
 cover: https://www.dropbox.com/s/lef5b6b49mbvf6o/Thumb_SkySounds_2_7.jpg?raw=1
 suit_title: SkySounds.2

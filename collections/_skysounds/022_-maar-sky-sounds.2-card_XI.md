@@ -3,6 +3,9 @@ layout: card
 permalink: /PHR6198
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919d903e01d8a7df9d0f604
+track_v2_slug: Skysounds-2-XI
 
 cover: https://www.dropbox.com/s/k3dljl4kkz9quxv/Thumb_SkySounds_2_11.jpg?raw=1
 suit_title: SkySounds.2

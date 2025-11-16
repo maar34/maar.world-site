@@ -3,6 +3,9 @@ layout: card
 permalink: /LYN4636
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919d95ce01d8a7df9d0f6d7
+track_v2_slug: Skysounds-2-I
 
 cover: https://www.dropbox.com/s/kar0mqw5hs3qp4w/Thumb_SkySounds_2_1.jpg?raw=1
 suit_title: SkySounds.2

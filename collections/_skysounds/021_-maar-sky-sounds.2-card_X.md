@@ -3,6 +3,9 @@ layout: card
 permalink: /VKS9121
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919d902e01d8a7df9d0f5f3
+track_v2_slug: Skysounds-2-X
 
 cover: https://www.dropbox.com/s/pdnu0kt5v4jvube/Thumb_SkySounds_2_10.jpg?raw=1
 suit_title: SkySounds.2

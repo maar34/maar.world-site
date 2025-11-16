@@ -3,6 +3,9 @@ layout: card
 permalink: /IWG8041
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919dd78e01d8a7df9d0f9b7
+track_v2_slug: Skysounds-3-II
 
 cover: https://www.dropbox.com/s/y8d8mwund92zsf1/Thumb_SkySounds_3_2.jpg?raw=1
 suit_title: SkySounds.3

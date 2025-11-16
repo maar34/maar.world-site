@@ -3,6 +3,9 @@ layout: card
 permalink: /DVG9370
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919cfe2e01d8a7df9d0f188
+track_v2_slug: Skysounds-1-XI
 
 cover: https://www.dropbox.com/s/t6dtqcmspw2v4e1/Thumb_SkySounds_1_11.jpg?raw=1
 suit_title: SkySounds.1

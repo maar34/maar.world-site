@@ -3,6 +3,9 @@ layout: card
 permalink: /SHF4580
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919dd7ae01d8a7df9d0f9c8
+track_v2_slug: Skysounds-3-III
 
 cover: https://www.dropbox.com/s/0lpws18msevtreq/Thumb_SkySounds_3_3.jpg?raw=1
 suit_title: SkySounds.3

@@ -3,6 +3,9 @@ layout: card
 permalink: /AXP3732
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919d8fde01d8a7df9d0f5af
+track_v2_slug: Skysounds-2-IV
 
 cover: https://www.dropbox.com/s/wydoxppqaz7dq79/Thumb_SkySounds_2_4.jpg?raw=1
 suit_title: SkySounds.2

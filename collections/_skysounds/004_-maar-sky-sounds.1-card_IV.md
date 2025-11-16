@@ -3,6 +3,9 @@ layout: card
 permalink: /TMK694
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919cfcee01d8a7df9d0f130
+track_v2_slug: Skysounds-1-IV
 
 cover: https://www.dropbox.com/s/lyidkkvd18m2ima/Thumb_SkySounds_1_4.jpg?raw=1
 suit_title: SkySounds.1

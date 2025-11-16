@@ -3,6 +3,9 @@ layout: card
 permalink: /EBT5599
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919a2fad44c12045386f4c7
+track_v2_slug: Skysounds-1-I
 
 cover: https://www.dropbox.com/s/annm9o8t07jxrzs/Thumb_SkySounds_1_1.png?raw=1
 suit_title: SkySounds.1

@@ -3,6 +3,9 @@ layout: card
 permalink: /BCC4992
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919cfdfe01d8a7df9d0f17a
+track_v2_slug: Skysounds-1-X
 
 cover: https://www.dropbox.com/s/2jjqw5eyrkbz3cu/Thumb_SkySounds_1_10.jpg?raw=1
 suit_title: SkySounds.1

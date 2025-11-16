@@ -3,6 +3,43 @@ layout: articles
 show_date: false
 ---
 
+{% assign track_version = page.track_version | default: 1 %}
+{% assign track_version = track_version | plus: 0 %}
+{% assign track_redirect_url = page.track_redirect_url %}
+{% if track_redirect_url == nil and page.track_v2_id %}
+  {% assign track_redirect_url = 'https://orbiter.plantasia.space/?trackId=' | append: page.track_v2_id %}
+{% endif %}
+{% assign track_redirect_label = page.track_redirect_label | default: page.track_v2_slug | default: page.card_title %}
+
+{% if track_version == 2 and track_redirect_url %}
+<div class="hero hero--center track-redirect" style="background-color: #000000;">
+  <div class="hero__content">
+    <h2 style="margin-bottom: 8px;">{{ track_redirect_label }} is now playing on Maar Orbiter</h2>
+    <p style="margin-bottom: 16px;">We are redirecting you to the updated listening experience.</p>
+    <a class="button button--info" href="{{ track_redirect_url }}" rel="noopener">
+      <span class="material-symbols-outlined">rocket_launch</span>Open Maar Orbiter
+    </a>
+    <p style="margin-top: 16px;">If nothing happens automatically, use the button above. The legacy version 1 card remains below.</p>
+  </div>
+</div>
+<noscript>
+  <div class="hero hero--center" style="background-color: #260000;">
+    <div class="hero__content">
+      <p><strong>JavaScript is disabled.</strong> Use the button above to open the Maar Orbiter track page.</p>
+    </div>
+  </div>
+</noscript>
+<script>
+  (function () {
+    var redirectUrl = {{ track_redirect_url | jsonify }};
+    window.setTimeout(function () {
+      window.location.href = redirectUrl;
+    }, 300);
+  })();
+</script>
+{% endif %}
+
+<div id="track-version-1" class="track-version track-version--legacy">
 <div class="hero hero--dark" style='height: 233px; background-image: url("/img/433.1b.jpg");'>
   <div class="hero__content">  
   </div>
@@ -72,4 +109,5 @@ show_date: false
       <span class="material-symbols-outlined">Download</span> spoken word
     </a>
   </div>
+</div>
 </div>

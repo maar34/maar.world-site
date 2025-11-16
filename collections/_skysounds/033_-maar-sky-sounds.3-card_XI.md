@@ -3,6 +3,9 @@ layout: card
 permalink: /NTH7336
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919dd84e01d8a7df9d0fa50
+track_v2_slug: Skysounds-3-XI
 
 cover: https://www.dropbox.com/s/vu87kq77f0a7cr4/Thumb_SkySounds_3_11.jpg?raw=1
 suit_title: SkySounds 3

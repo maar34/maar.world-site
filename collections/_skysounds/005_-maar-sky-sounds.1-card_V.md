@@ -3,6 +3,9 @@ layout: card
 permalink: /SVA679
 show_title: false
 header: false
+track_version: 2
+track_v2_id: 6919cfcbe01d8a7df9d0f122
+track_v2_slug: Skysounds-1-V
 
 cover: https://www.dropbox.com/s/5gqvdbu52jb8vt7/Thumb_SkySounds_1_5.jpg?raw=1
 suit_title: SkySounds.1
