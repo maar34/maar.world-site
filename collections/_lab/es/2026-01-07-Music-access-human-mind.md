@@ -3,7 +3,7 @@ title: Música, Acceso y la Mente Humana
 layout: article
 permalink: /lab/es/cultura-compartida.html
 cover: /img/lab/orbital-workshop-1.jpg
-tags: Capital Cultural  Música Compartida Acceso
+tags: ES Capital Cultural  Música Compartida Acceso
 lang: es
 date: 2026-01-07
 ---

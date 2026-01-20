@@ -3,7 +3,7 @@ title: Music, Abstraction, and the Return to Playing
 layout: article
 permalink: /lab/en/music-return-to-playing.html
 cover: /img/lab/orbital-workshop-1.jpg
-tags: Music Cultural Capital Participation Listening Intelligence
+tags: EN Music Cultural Capital Participation Listening Intelligence
 lang: en
 date: 2026-01-20
 ---

@@ -3,7 +3,7 @@ title: Music, Access, and the Human Mind
 layout: article
 permalink: /lab/en/shared-culture.html
 cover: /img/lab/orbital-workshop-1.jpg
-tags: Cultural Capital  Shared Music Access
+tags: EN Cultural Capital  Shared Music Access
 lang: en
 date: 2026-01-07
 ---

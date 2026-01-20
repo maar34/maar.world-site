@@ -3,7 +3,7 @@ title: Música, Abstracción y el Retorno al Juego
 layout: article
 permalink: /lab/es/musica-retorno-al-juego.html
 cover: /img/lab/orbital-workshop-1.jpg
-tags: Música Capital Cultural Participación Escucha Inteligencia
+tags: ES Música Capital Cultural Participación Escucha Inteligencia es
 lang: es
 date: 2026-01-20
 ---
