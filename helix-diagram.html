@@ -1,0 +1,366 @@
+---
+layout: none
+permalink: /helix-diagram.html
+---
+{% raw %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Helix Diagram</title>
+  <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+  <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  <style>
+    html, body { margin: 0; padding: 0; background: #ffffff; }
+    * { box-sizing: border-box; }
+    button { appearance: none; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <script type="text/babel">
+    const { useState } = React;
+
+    const C = {
+      bg: "#ffffff",
+      panel: "#f8f8fa",
+      border: "#ccccdd",
+      borderStrong: "#999ab5",
+      accent: "#4a35c8",
+      green: "#1a8a52",
+      orange: "#c46a00",
+      cyan: "#0077aa",
+      red: "#bb2222",
+      yellow: "#888800",
+      muted: "#888899",
+      textDim: "#555566",
+      text: "#222233",
+    };
+
+    const CX = 480, CY = 310, TR = 190;
+
+    const pA = { x: CX, y: CY - TR };
+    const pB = { x: CX - TR * Math.sin(2*Math.PI/3), y: CY - TR * Math.cos(2*Math.PI/3) };
+    const pC = { x: CX + TR * Math.sin(2*Math.PI/3), y: CY - TR * Math.cos(2*Math.PI/3) };
+
+    const router = { id: "ROUTER", x: CX, y: CY };
+
+    function satellite(center, angleDeg, dist) {
+      const a = angleDeg * Math.PI / 180;
+      return { x: center.x + Math.cos(a) * dist, y: center.y + Math.sin(a) * dist };
+    }
+
+    function outwardAngle(p) {
+      return Math.atan2(p.y - CY, p.x - CX) * 180 / Math.PI;
+    }
+
+    const angA = outwardAngle(pA);
+    const angB = outwardAngle(pB);
+    const angC = outwardAngle(pC);
+
+    const stations = [
+      {
+        id: "A", pc: { ...pA, label: "Computadora A" },
+        screen: satellite(pA, angA, 85),
+        nfc: satellite(pA, angA - 55, 80),
+        led: satellite(pA, angA + 55, 80),
+      },
+      {
+        id: "B", pc: { ...pB, label: "Computadora B" },
+        screen: satellite(pB, angB, 85),
+        nfc: satellite(pB, angB - 55, 80),
+        led: satellite(pB, angB + 55, 80),
+      },
+      {
+        id: "C", pc: { ...pC, label: "Computadora C" },
+        screen: satellite(pC, angC, 85),
+        nfc: satellite(pC, angC + 55, 80),
+        led: satellite(pC, angC - 55, 80),
+      },
+    ];
+
+    const amp = { id: "AMP", x: CX - 260, y: CY + 185 };
+    const hps = [
+      { id: "HP1", x: amp.x - 70, y: amp.y + 78 },
+      { id: "HP2", x: amp.x, y: amp.y + 92 },
+      { id: "HP3", x: amp.x + 70, y: amp.y + 78 },
+    ];
+    const phones = { id: "PHONES", x: CX + 250, y: CY + 185 };
+
+    const wireStyle = {
+      ethernet: { stroke: C.green, dash: "none", labelEs: "Ethernet", width: 2 },
+      wifi: { stroke: C.cyan, dash: "6,4", labelEs: "WiFi", width: 1.5 },
+      hdmi: { stroke: C.accent, dash: "none", labelEs: "HDMI", width: 2 },
+      audio: { stroke: C.orange, dash: "none", labelEs: "Audio", width: 2 },
+      nfc: { stroke: C.red, dash: "3,3", labelEs: "Datos NFC", width: 1.5 },
+      led: { stroke: C.yellow, dash: "4,2", labelEs: "Alimentación LED", width: 1.5 },
+    };
+
+    const connections = [
+      ...stations.map(s => ({ from: router, to: s.pc, type: "ethernet" })),
+      { from: router, to: phones, type: "wifi" },
+      ...stations.map(s => ({ from: s.pc, to: s.screen, type: "hdmi" })),
+      ...stations.map(s => ({ from: s.nfc, to: s.pc, type: "nfc" })),
+      ...stations.map(s => ({ from: s.pc, to: s.led, type: "led" })),
+      { from: stations[1].pc, to: amp, type: "audio" },
+      ...hps.map(hp => ({ from: amp, to: hp, type: "audio" })),
+    ];
+
+    function Wire({ from, to, type, hl }) {
+      const s = wireStyle[type];
+      const op = hl === null ? 1 : hl === type ? 1 : 0.1;
+      return (
+        <line
+          x1={from.x}
+          y1={from.y}
+          x2={to.x}
+          y2={to.y}
+          stroke={s.stroke}
+          strokeWidth={s.width}
+          strokeDasharray={s.dash === "none" ? undefined : s.dash}
+          opacity={op}
+          style={ { transition: "opacity 0.18s" } }
+        />
+      );
+    }
+
+    function PCNode({ s, active, onClick }) {
+      const col = active ? C.accent : C.muted;
+      const fill = active ? "#eeeeff" : C.panel;
+      return (
+        <g onClick={() => onClick(s.id)} style={{ cursor: "pointer" }}>
+          <circle cx={s.pc.x} cy={s.pc.y} r={34} fill={fill}
+            stroke={active ? C.accent : C.borderStrong} strokeWidth={active ? 2.5 : 1.5} />
+          <rect x={s.pc.x - 13} y={s.pc.y - 10} width={26} height={17} rx={2}
+            fill="none" stroke={col} strokeWidth={1.5} />
+          <rect x={s.pc.x - 6} y={s.pc.y + 7} width={12} height={3} rx={1} fill={col} />
+          <rect x={s.pc.x - 8} y={s.pc.y + 10} width={16} height={2} rx={1} fill={col} />
+          <text x={s.pc.x} y={s.pc.y + 48} textAnchor="middle"
+            fill={active ? C.accent : C.textDim} fontSize={9} fontFamily="monospace" fontWeight="bold">
+            PC-{s.id}
+          </text>
+          <text x={s.pc.x} y={s.pc.y + 1} textAnchor="middle" dominantBaseline="middle"
+            fill={active ? C.accent : C.textDim} fontSize={7.5} fontFamily="monospace">
+            {s.pc.label}
+          </text>
+        </g>
+      );
+    }
+
+    function RouterNode({ active, onClick }) {
+      const col = active ? C.green : C.muted;
+      return (
+        <g onClick={() => onClick("ROUTER")} style={{ cursor: "pointer" }}>
+          <circle cx={router.x} cy={router.y} r={28} fill={active ? "#e8f8ef" : C.panel}
+            stroke={active ? C.green : C.borderStrong} strokeWidth={active ? 2 : 1.5} />
+          {[11, 17, 23].map((r, i) => (
+            <path key={i} d={`M${router.x - r * 0.72},${router.y} A${r},${r} 0 0,1 ${router.x + r * 0.72},${router.y}`}
+              fill="none" stroke={col} strokeWidth={1.2} opacity={1 - i * 0.3} />
+          ))}
+          <circle cx={router.x} cy={router.y} r={3} fill={col} />
+          <text x={router.x} y={router.y + 40} textAnchor="middle"
+            fill={active ? C.green : C.textDim} fontSize={9} fontFamily="monospace">Router WiFi</text>
+          <text x={router.x} y={router.y + 51} textAnchor="middle"
+            fill={C.muted} fontSize={8} fontFamily="monospace">(+ Internet)</text>
+        </g>
+      );
+    }
+
+    function Box({ node, color, icon, label, active }) {
+      return (
+        <g>
+          <rect x={node.x - 18} y={node.y - 13} width={36} height={26} rx={4}
+            fill={active ? `${color}18` : C.panel}
+            stroke={active ? color : C.border} strokeWidth={active ? 1.5 : 1} />
+          <text x={node.x} y={node.y + 3} textAnchor="middle"
+            fill={active ? color : C.muted} fontSize={10} fontFamily="monospace">{icon}</text>
+          <text x={node.x} y={node.y + 24} textAnchor="middle"
+            fill={active ? color : C.textDim} fontSize={8} fontFamily="monospace">{label}</text>
+        </g>
+      );
+    }
+
+    function AmpBox({ active }) {
+      return (
+        <g>
+          <rect x={amp.x - 38} y={amp.y - 24} width={76} height={48} rx={5}
+            fill={active ? "#fff3e0" : C.panel}
+            stroke={active ? C.orange : C.borderStrong} strokeWidth={active ? 2 : 1.5} />
+          <text x={amp.x} y={amp.y - 6} textAnchor="middle"
+            fill={active ? C.orange : C.muted} fontSize={9} fontFamily="monospace">▶ AMPLIF.</text>
+          <text x={amp.x} y={amp.y + 8} textAnchor="middle"
+            fill={active ? C.orange : C.textDim} fontSize={8} fontFamily="monospace">Auriculares</text>
+          <text x={amp.x} y={amp.y + 18} textAnchor="middle"
+            fill={C.muted} fontSize={8} fontFamily="monospace">AMP-1</text>
+        </g>
+      );
+    }
+
+    function PhoneBox({ active }) {
+      return (
+        <g>
+          <rect x={phones.x - 22} y={phones.y - 28} width={44} height={56} rx={6}
+            fill={active ? "#e0f7ff" : C.panel}
+            stroke={active ? C.cyan : C.borderStrong} strokeWidth={active ? 2 : 1.5} />
+          <rect x={phones.x - 13} y={phones.y - 20} width={26} height={32} rx={2}
+            fill={active ? "#cceeff" : "#eeeeee"}
+            stroke={active ? C.cyan : C.border} strokeWidth={0.8} />
+          <circle cx={phones.x} cy={phones.y + 18} r={3} fill={active ? C.cyan : C.muted} />
+          <text x={phones.x} y={phones.y + 40} textAnchor="middle"
+            fill={active ? C.cyan : C.textDim} fontSize={8} fontFamily="monospace">Móviles</text>
+          <text x={phones.x} y={phones.y + 50} textAnchor="middle"
+            fill={active ? C.cyan : C.textDim} fontSize={8} fontFamily="monospace">visitantes</text>
+        </g>
+      );
+    }
+
+    function InternetCloud() {
+      const x = CX + 90, y = CY - 60;
+      return (
+        <g opacity={0.85}>
+          <ellipse cx={x} cy={y + 4} rx={18} ry={12} fill="#ddeeff" stroke={C.cyan} strokeWidth={1} />
+          <ellipse cx={x - 12} cy={y + 8} rx={12} ry={9} fill="#ddeeff" stroke={C.cyan} strokeWidth={1} />
+          <ellipse cx={x + 12} cy={y + 8} rx={12} ry={9} fill="#ddeeff" stroke={C.cyan} strokeWidth={1} />
+          <ellipse cx={x} cy={y + 12} rx={22} ry={10} fill="#ddeeff" stroke={C.cyan} strokeWidth={1} />
+          <text x={x} y={y + 10} textAnchor="middle" dominantBaseline="middle"
+            fill={C.cyan} fontSize={8} fontFamily="monospace" fontWeight="bold">Internet</text>
+          <line x1={x} y1={y + 22} x2={router.x + 10} y2={router.y - 28}
+            stroke={C.cyan} strokeWidth={1} strokeDasharray="4,3" opacity={0.6} />
+        </g>
+      );
+    }
+
+    const LEGEND = ["ethernet", "hdmi", "audio", "wifi", "nfc", "led"];
+
+    function HelixDiagramPrint() {
+      const [activePC, setActivePC] = useState(null);
+      const [hl, setHl] = useState(null);
+
+      const togglePC = (id) => setActivePC((p) => p === id ? null : id);
+      const toggleHL = (t) => setHl((h) => h === t ? null : t);
+      const routerActive = hl === "ethernet" || hl === "wifi";
+
+      return (
+        <div style={{
+          background: C.bg,
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          padding: "20px 8px",
+          fontFamily: "monospace"
+        }}>
+          <div style={{ textAlign: "center", marginBottom: 14 }}>
+            <div style={{ color: C.accent, fontSize: 22, fontWeight: 700, letterSpacing: 5 }}>HELIX</div>
+            <div style={{ color: C.textDim, fontSize: 10, letterSpacing: 2 }}>
+              Diagrama de instalación técnica — EAC Montevideo 2025
+            </div>
+          </div>
+
+          <div style={{
+            background: C.bg,
+            border: `1px solid ${C.border}`,
+            borderRadius: 10,
+            padding: 6,
+            marginBottom: 14,
+            maxWidth: "100%",
+            overflowX: "auto"
+          }}>
+            <svg width={960} height={690} viewBox="0 0 960 690" style={{ display: "block" }}>
+              <polygon points={stations.map((s) => `${s.pc.x},${s.pc.y}`).join(" ")}
+                fill="none" stroke={C.border} strokeWidth={1.2} strokeDasharray="10,7" />
+
+              {connections.map((cn, i) => (
+                <Wire key={i} from={cn.from} to={cn.to} type={cn.type} hl={hl} />
+              ))}
+
+              <InternetCloud />
+
+              {stations.map((s) => (
+                <Box key={`scr-${s.id}`} node={s.screen} color={C.accent}
+                  icon="▬" label={`Pantalla ${s.id}`} active={hl === "hdmi"} />
+              ))}
+
+              {stations.map((s) => (
+                <Box key={`nfc-${s.id}`} node={s.nfc} color={C.red}
+                  icon="◈" label={`NFC-${s.id}`} active={hl === "nfc"} />
+              ))}
+
+              {stations.map((s) => (
+                <Box key={`led-${s.id}`} node={s.led} color={C.yellow}
+                  icon="━" label={`LED-${s.id}`} active={hl === "led"} />
+              ))}
+
+              {hps.map((hp, i) => (
+                <Box key={hp.id} node={hp} color={C.orange}
+                  icon="◉" label={`Auric. ${i + 1}`} active={hl === "audio"} />
+              ))}
+
+              <AmpBox active={hl === "audio"} />
+              <PhoneBox active={hl === "wifi"} />
+              <RouterNode active={routerActive} onClick={togglePC} />
+
+              {stations.map((s) => (
+                <PCNode key={s.id} s={s} active={activePC === s.id} onClick={togglePC} />
+              ))}
+
+              <text x={stations[0].pc.x} y={22} textAnchor="middle"
+                fill={C.border} fontSize={8} fontFamily="monospace" letterSpacing={2}>ESTACIÓN A</text>
+              <text x={stations[1].pc.x - 20} y={660} textAnchor="middle"
+                fill={C.border} fontSize={8} fontFamily="monospace" letterSpacing={2}>ESTACIÓN B</text>
+              <text x={stations[2].pc.x + 20} y={660} textAnchor="middle"
+                fill={C.border} fontSize={8} fontFamily="monospace" letterSpacing={2}>ESTACIÓN C</text>
+            </svg>
+          </div>
+
+          <div style={{
+            display: "flex",
+            flexWrap: "wrap",
+            gap: 7,
+            justifyContent: "center",
+            marginBottom: 10
+          }}>
+            {LEGEND.map((type) => {
+              const s = wireStyle[type];
+              const on = hl === type;
+              return (
+                <button key={type} onClick={() => toggleHL(type)} style={{
+                  background: on ? `${s.stroke}15` : C.panel,
+                  border: `1px solid ${on ? s.stroke : C.border}`,
+                  borderRadius: 5,
+                  padding: "4px 11px",
+                  cursor: "pointer",
+                  display: "flex",
+                  alignItems: "center",
+                  gap: 7,
+                  color: on ? s.stroke : C.textDim,
+                  fontSize: 11,
+                  fontFamily: "monospace",
+                  transition: "all 0.15s"
+                }}>
+                  <svg width={26} height={8}>
+                    <line x1={0} y1={4} x2={26} y2={4}
+                      stroke={s.stroke} strokeWidth={2}
+                      strokeDasharray={s.dash === "none" ? undefined : s.dash} />
+                  </svg>
+                  {s.labelEs}
+                </button>
+              );
+            })}
+          </div>
+
+          <div style={{ color: C.muted, fontSize: 10, textAlign: "center", marginTop: 8 }}>
+            Clic en leyenda para filtrar · Clic en computadoras para seleccionar
+          </div>
+        </div>
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(<HelixDiagramPrint />);
+  </script>
+</body>
+</html>
+{% endraw %}
